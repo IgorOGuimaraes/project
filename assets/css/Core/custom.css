@@ -1,0 +1,617 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header, main, footer {
+    /*padding-left: 250px !important;*/
+}
+
+.lock-screen {
+    display: block;
+    position: fixed;
+    z-index: 99999999999999999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.6);
+}
+
+.lock-screen-content {
+    background-color: #fefefe;
+    padding: 15%;
+    margin:15%;
+    /*border: 1px solid #888;*/
+    width: 10%; /
+}
+
+.top-nav{
+    max-height: 100px !important;
+}
+
+#main {
+    flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.page-footer.fxd {
+    position:fixed; bottom:0px; width:100%
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/material/MaterialIcons-Regular.eot);
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(../font/material/MaterialIcons-Regular.woff2) format('woff2'),
+    url(../font/material/MaterialIcons-Regular.woff) format('woff'),
+    url(../font/material/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+@font-face {
+    font-family: TeleGroteskUlt-Regular;
+    src: url(../font/t-systems/TeleGroteskUlt-Regular.svg) format('svg')
+}
+
+@font-face {
+    font-family: TeleGroteskUltra;
+    src: url(../font/t-systems/TeleGroteskUltra.eot);
+    src: url(../font/t-systems/TeleGroteskUltra.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskUltra.woff) format('woff'), url(../font/t-systems/TeleGroteskUltra.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: TeleLogo;
+    src: url(../font/t-systems/TeleLogo.eot);
+    src: url(../font/t-systems/TeleLogo.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleLogo.woff) format('woff'), url(../font/t-systems/TeleLogo.ttf) format('truetype'), url(../font/t-systems/TeleLogo.svg) format('svg')
+}
+
+@font-face {
+    font-family: TeleGroteskNormal;
+    src: url(../font/t-systems/TeleGroteskNormal.eot);
+    src: url(../font/t-systems/TeleGroteskNormal.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskNormal.woff) format('woff'), url(../font/t-systems/TeleGroteskNormal.ttf) format('truetype'), url(../font/t-systems/TeleGroteskNormal.svg) format('svg')
+}
+
+@font-face {
+    font-family: TeleGroteskHeadline-Ultra;
+    src: url(../font/t-systems/TeleGroteskHeadline-Ultra.ttf);
+    src: url(../font/t-systems/TeleGroteskHeadline-Ultra.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHeadline-Ultra.woff) format('woff'), url(../font/t-systems/TeleGroteskHeadline-Ultra.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHeadline-Ultra.svg) format('svg')
+}
+
+@font-face {
+    font-family: TeleGroteskHeadline-Regular;
+    src: url(../font/t-systems/TeleGroteskHeadline-Regular.eot);
+    src: url(../font/t-systems/TeleGroteskHeadline-Regular.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHeadline-Regular.woff) format('woff'), url(../font/t-systems/TeleGroteskHeadline-Regular.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHeadline-Regular.svg) format('svg')
+}
+
+@font-face {
+    font-family: TeleGroteskHalbfett;
+    src: url(../font/t-systems/TeleGroteskHalbfett.eot);
+    src: url(../font/t-systems/TeleGroteskHalbfett.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHalbfett.woff) format('woff'), url(../font/t-systems/TeleGroteskHalbfett.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHalbfett.svg) format('svg')
+}
+
+@font-face {
+    font-family: TeleGroteskFett;
+    src: url(../font/t-systems/TeleGroteskFett.eot);
+    src: url(../font/t-systems/TeleGroteskFett.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskFett.woff) format('woff'), url(../font/t-systems/TeleGroteskFett.ttf) format('truetype'), url(../font/t-systems/TeleGroteskFett.svg) format('svg')
+}
+
+.font-telegrotesk{
+
+    font-family: TeleGroteskFet, TeleGroteskHal, sans-serif;
+
+}
+
+
+
+.t-magenta {
+    background-color: #E20074 !important
+}
+
+.t-grey1 {
+    background-color: #A4A4A4 !important
+}
+
+.t-grey2 {
+    background-color: #7C7C7C !important
+}
+
+.t-grey3 {
+    background-color: #6C6C6C !important
+}
+
+.t-grey4 {
+    background-color: #EDEDED !important
+}
+
+.t-grey5 {
+    background-color: #4B4B4B !important
+}
+
+.t-grey6 {
+    background-color: #D0D0D0 !important
+}
+
+.t-yellow {
+    background-color: #FFD329 !important
+}
+
+.t-orange {
+    background-color: #FF9A1E !important
+}
+
+.t-violet {
+    background-color: #9F4C97 !important
+}
+
+.t-light-blue {
+    background-color: #53BAF2 !important
+}
+
+.t-dark-blue {
+    background-color: #1063AD !important
+}
+
+.t-petrol {
+    background-color: #1BADA2 !important
+}
+
+.t-green {
+    background-color: #BFCB44 !important
+}
+
+.t-white {
+    background-color: #fff !important
+}
+
+.t-red{
+    background-color: #D90000 !important
+}
+
+.t-yellow2{
+    background-color: #FECB00 !important
+}
+
+.t-green2{
+    background-color: #6BB324 !important
+}
+
+.tx-magenta {
+    color: #E20074 !important
+}
+
+.tx-grey1 {
+    color: #A4A4A4 !important
+}
+
+.tx-grey2 {
+    color: #7C7C7C !important
+}
+
+.tx-grey3 {
+    color: #6C6C6C !important
+}
+
+.tx-grey4 {
+    color: #EDEDED !important
+}
+
+.tx-grey5 {
+    color: #4B4B4B !important
+}
+
+.tx-grey6 {
+    color: #D0D0D0 !important
+}
+
+.tx-yellow {
+    color: #FFD329  !important
+}
+
+.tx-orange {
+    color: #FF9A1E !important
+}
+
+.tx-violet {
+    color: #9F4C97 !important
+}
+
+.tx-light-blue {
+    color: #53BAF2 !important
+}
+
+.tx-dark-blue {
+    color: #1063AD !important
+}
+
+.tx-petrol {
+    color: #1BADA2 !important
+}
+
+.tx-green {
+    color: #BFCB44 !important
+}
+
+.tx-red{
+    color: #D90000 !important
+}
+
+.tx-yellow2{
+    color: #FECB00 !important
+}
+
+.tx-green2{
+    color: #6BB324 !important
+}
+
+.tx-white {
+    color: #fff !important
+}
+
+.margin-small {
+    margin-left: 29%;
+}
+
+.margin-medium {
+    margin-left: 56%;
+}
+
+.font-size-1 {
+    font-size: 1em;
+}
+
+.font-size-2 {
+    font-size: 2em;
+}
+
+.font-size-3 {
+    font-size: 3em;
+}
+
+.font-size-4 {
+    font-size: 4em;
+}
+
+.font-size-5 {
+    font-size: 5em;
+}
+
+.font-size-6 {
+    font-size: 6em;
+}
+
+.font-size-7 {
+    font-size: 7em;
+}
+
+.font-size-8 {
+    font-size: 8em;
+}
+
+.font-size-9 {
+    font-size: 9em;
+}
+
+.responsive-image {
+
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+
+}
+
+.header {
+
+    font-family: TeleGroteskHeadline-Ultra, sans-serif;
+
+}
+
+.brand-logo {
+
+    font-family: TeleLogo, sans-serif;
+}
+
+.nav-wrapper .btn-large {
+
+    font-family: TeleGroteskFet, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+    font-family: TeleGroteskHeadline-Regular, sans-serif;
+
+}
+
+p {
+
+    font-family: TeleGroteskHal, sans-serif;
+}
+
+header {
+
+    overflow: hidden;
+
+}
+
+.crossed {
+    text-decoration: line-through;
+}
+
+.cmr-info ul li {
+
+    list-style: circle inside;
+    margin-bottom: 10px;
+
+}
+
+.blur{
+
+    -webkit-filter: blur(2px);
+    -o-filter: blur(2px);
+    filter: blur(2px);
+}
+
+
+/*
+* MATERIALIZE CUSTOMIZATION
+*/
+
+header{
+    max-height:70px !important;
+}
+
+.spinner-magenta-only{
+    border-color:#E20074 !important;
+}
+
+.timepicker-canvas line {
+    stroke: #E20074 !important;
+}
+
+.timepicker-canvas-bearing {
+    fill: #E20074 !important;
+}
+
+.timepicker-canvas-bg {
+    fill: #E20074 !important;
+}
+
+.timepicker-digital-display {
+    background-color: #E20074 !important;
+}
+
+.timepicker-close {
+    color: #E20074 !important;
+}
+
+
+.datepicker-table td.is-selected {
+    background-color: #1BADA2 !important;
+    color: #fff !important;
+}
+
+.btn{
+    background-color: #1063AD !important;
+
+}
+
+.datepicker-clear {
+    color: #D90000 !important;
+}
+
+.datepicker-cancel {
+    color: #E20074 !important;
+
+}
+
+.datepicker-table td.is-today {
+    color: #E20074 !important;
+}
+
+.datepicker-done {
+    color: #E20074 !important;
+
+}
+
+
+.datepicker-date-display {
+
+    background-color: #E20074 !important;
+}
+
+[type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: none !important;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: #E20074 !important;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: #E20074 !important;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: #E20074 !important;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 2px solid #E20074 !important;
+
+}
+
+[type="checkbox"]:checked + label:before {
+    border-right: 2px solid #E20074 !important;
+    border-bottom: 2px solid #E20074 !important;
+
+}
+
+[type="checkbox"].filled-in:checked + label:after {
+
+    border: 2px solid #E20074 !important;
+    background-color: #fff !important;
+    color: #fff !important;
+
+}
+
+input[type=checkbox]:checked + .lever {
+    background-color: #E20074 !important;
+}
+
+.switch label input[type=checkbox]:checked + .lever:after {
+    background-color: #E20074 !important;
+}
+
+.picker__date-display {
+    background-color: #E20074 !important;
+}
+
+.picker__today, .picker__close {
+
+    color: #E20074 !important;
+}
+
+.picker__day.picker__day--today {
+    color: #E20074 !important;
+}
+
+.clockpicker-canvas-bg {
+
+    fill: #E20074 !important;
+}
+
+.clockpicker-canvas line {
+    stroke: #E20074 !important;
+}
+
+.picker--focused .picker__day--selected {
+
+    background-color: #E20074 !important;
+    color: #ffffff !important;
+}
+
+.clockpicker-canvas-bearing {
+
+    fill: #E20074 !important;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: #E20074 !important;
+}
+
+blockquote {
+    border-left: 5px solid #E20074;
+}
+
+.dropdown-content > li > a {
+    color: #E20074 !important
+}
+
+.progress .indeterminate {
+    /*background-color: #E20074 !important;*/
+}
+
+.progress {
+    background-color: #E20074 !important
+}
+
+input[type=text]:not(.browser-default):focus:not(readonly) + label {
+    color: #E20074 !important;
+}
+
+.pagination li.active {
+    background-color: #E20074 !important;
+}
+
+input[type=text]:not(.browser-default):focus:not(readonly) {
+
+    border-bottom: 1px solid #E20074 !important;
+    -webkit-box-shadow: 0 1px 0 0 #E20074 !important;
+    box-shadow: 0 1px 0 0 #E20074 !important;
+}
+
+input[type=password]:not(.browser-default):focus:not(readonly) + label {
+    color: #E20074 !important;
+}
+
+input[type=password]:not(.browser-default):focus:not(readonly) {
+
+    border-bottom: 1px solid #E20074 !important;
+    -webkit-box-shadow: 0 1px 0 0 #E20074 !important;
+    box-shadow: 0 1px 0 0 #E20074 !important;
+}
+
+input[type=email]:not(.browser-default):focus:not(readonly) + label {
+    color: #E20074 !important;
+}
+
+input[type=email]:not(.browser-default):focus:not(readonly) {
+
+    border-bottom: 1px solid #E20074 !important;
+    -webkit-box-shadow: 0 1px 0 0 #E20074 !important;
+    box-shadow: 0 1px 0 0 #E20074 !important;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #E20074 !important;
+
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #E20074 !important;
+    -webkit-box-shadow: 0 1px 0 0 #E20074 !important;
+    box-shadow: 0 1px 0 0 #E20074 !important;
+}
+
+i.active {
+
+    color: #E20074 !important;
+}
+
+li:not(.disabled) > span {
+
+    color: #E20074 !important;
+}
+
+input[type=textarea]:not(.browser-default):focus:not(readonly) {
+
+    border-bottom: 1px solid #E20074 !important;
+    -webkit-box-shadow: 0 1px 0 0 #E20074 !important;
+    box-shadow: 0 1px 0 0 #E20074 !important;
+}
