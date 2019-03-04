@@ -14,5 +14,12 @@ class LoginModel extends Model {
 
     }
 
+    public function getUserInfo($basicID)
+    {
+
+        return $this->connection->query("SELECT * FROM tb_core_basic WHERE BasicID = " . $basicID)->fetchAll();
+
+    }
+
 }
 

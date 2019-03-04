@@ -16,7 +16,7 @@ if (isset($_SESSION['UserID'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <!--    <link href="/project/assets/css/Application/Login/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>-->
     <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <!--    <link rel="icon" type="image/png" href="/--><?php //echo APPLICATION_NAME; ?><!--/favicon.png">-->
+        <link rel="icon" type="image/png" href="/<?php echo APPLICATION_NAME; ?>/favicon.png">
 
 
 </head>

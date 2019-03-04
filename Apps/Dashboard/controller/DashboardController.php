@@ -59,19 +59,6 @@ class DashboardController extends Controller
 
     }
 
-    /**
-     *
-     */
-    public function saveDashboard()
-    {
-
-        //Call new mode
-        $model = new DashboardModel();
-        //Save grid state
-        $model->dashboardSave($_POST['gid_date'], $_SESSION['automation_UserID']);
-        //TODO: Return response of save
-
-    }
 
     public function viewAccess()
     {

@@ -25,4 +25,10 @@ $(document).ready(function () {
         });
     });
 
+    $('html').keyup(function(e){
+        if(e.keyCode == 13){
+            $('#login').click();
+        }
+    });
+
 });

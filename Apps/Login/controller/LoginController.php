@@ -52,8 +52,14 @@ class LoginController extends Controller
                 ]);
             } else {
 
+                $user_info = $model->getUserInfo($validate[0]['BasicID']);
+
+                $_SESSION['BasicID'] = $validate[0]['BasicID'];
                 $_SESSION['UserID'] = $validate[0]['UserID'];
                 $_SESSION['UserName'] = $validate[0]['UserName'];
+                $_SESSION['FullName'] = $user_info[0]['Name'];
+                $_SESSION['Email'] = $user_info[0]['Email'];
+                $_SESSION['Birthday'] = $user_info[0]['Birthday'];
 
                 $response =  json_encode([
                     'Status' => 'Success',

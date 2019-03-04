@@ -333,6 +333,7 @@ header, main, footer {
     -moz-background-size:cover;
     -o-background-size:cover;
     background-size:cover;
+    max-width: 60%;
 
 }
 

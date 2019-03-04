@@ -3,24 +3,14 @@ $url_to_array = explode("/", $_SERVER['REQUEST_URI']);
 ?>
 </main>
 <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery-3.3.1.min.js"></script>
-<script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery.blockUI.min.js"></script>
-<script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/lunr.min.js"></script>
-<script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/search.js"></script>
 <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/materialize.min.js"></script>
 <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery-ui.js"></script>
 <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery.gridster.min.js"></script>
 <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/intro.min.js"></script>
 <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/app.js"></script>
-<script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/apm_agent/elastic-apm-js-base/dist/bundles/elastic-apm-js-base.umd.min.js"></script>
 <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/loader.js"></script>
 <?php
 
-if(isset($_SESSION['language'])){
-
-    echo '<script src="/'.APPLICATION_NAME.'/assets/js/Core/lang.'.$_SESSION['language'].'.js"></script>';
-}else{
-    echo '<script src="/'.APPLICATION_NAME.'/assets/js/Core/lang.en.js"></script>';
-}
 
 ?>
 
