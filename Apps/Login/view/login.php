@@ -39,8 +39,8 @@ if (isset($_SESSION['UserID'])) {
         <div class="container">
             <a href="#" class="brand-logo">Gabarit.IO</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="badges.html">Manual</a></li>
-                <li><a href="collapsible.html">Sobre</a></li>
+                <li><a href="/<?=APPLICATION_NAME?>/About/home">Guide</a></li>
+                <li><a href="/<?=APPLICATION_NAME?>/About/about">About</a></li>
             </ul>
         </div>
     </div>
@@ -85,7 +85,7 @@ if (isset($_SESSION['UserID'])) {
 <footer class="page-footer red darken-4" style="bottom: 0; position: absolute; width: 100%;">
     <div class="footer-copyright">
         <div class="container center">
-            Copyright © 2018 - FATEC | Faculdade de Tecnologia
+            Copyright © 2018 - FATEC SBC | Faculdade de Tecnologia
         </div>
     </div>
 </footer>

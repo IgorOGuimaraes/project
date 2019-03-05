@@ -17,7 +17,15 @@ class AboutController extends Controller
         //Set empty html view
         $this->contentType('clean');
         //Add login view
-        include 'Application/About/view/about.php';
+        include 'Apps/About/view/guide.php';
+    }
+
+    public function about()
+    {
+        //Set empty html view
+        $this->contentType('clean');
+        //Add login view
+        include 'Apps/About/view/about.php';
     }
 
 }
