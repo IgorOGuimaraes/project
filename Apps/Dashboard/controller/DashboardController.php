@@ -47,27 +47,61 @@ class DashboardController extends Controller
             'html',
             'My Settings',
             [
-                $this->_assets_path . 'js/Core/datatables.min.js',
                 $this->_assets_path . 'js/Apps/Dashboard/settings.js',
+                $this->_assets_path . 'js/Core/sweetalert2.all.min.js',
+            ],
+            [
+                $this->_assets_path . 'css/Core/sweetalert2.all.min.css'
             ]
         );
-
-        $apps = $model->getUserAppsName($_SESSION['automation_UserID']);
 
         //add dashboard view
         include 'Apps/Dashboard/view/settings.php';
 
     }
 
-
-    public function viewAccess()
+    public function guide()
     {
 
-        $this->contentType('ajax', '');
-        $model = new DashboardModel();
-        $result = $model->getUserPermissionByApp($_POST['id']);
-        echo json_encode($result);
+        //Set content type as html page
+        $this->contentType(
+            'html',
+            'Guide'
+        );
 
+        //add dashboard view
+        include 'Apps/Dashboard/view/guide.php';
+
+    }
+
+    public function new_password ()
+    {
+
+        $this->contentType('ajax');
+        $model = new DashboardModel();
+        $v = true;
+        $message = '';
+
+        $validate = $model->setPasswordValid($_POST['last_password']);
+
+        if(empty($validate)) {
+            $v = false;
+        } else if ($validate[0]['UserID'] != $_SESSION['UserID']){
+            $v = false;
+        }
+
+        if($v){
+            if($_POST['new_password'] == $_POST['confirm_new_password']){
+                $message = 'Update password successful!';
+                $model->setNewPassword($_POST['new_password'], $_SESSION['UserID']);
+            } else {
+                $message = 'New password don\'t confirmed!';
+            }
+        } else {
+            $message = 'Last Password Invalid!';
+        }
+
+        echo json_encode(['message' => $message]);
 
     }
 
