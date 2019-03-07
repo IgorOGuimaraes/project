@@ -1,11 +1,3 @@
-<?php
-if (isset($_SESSION['UserID'])) {
-    header('Location: /' . APPLICATION_NAME . '/dashboard/home');
-    die;
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,25 +6,16 @@ if (isset($_SESSION['UserID'])) {
     <title>Gabarit.IO | Portal</title>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-<!--    <link href="/project/assets/css/Application/Login/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>-->
+    <!--    <link href="/project/assets/css/Application/Login/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>-->
     <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link rel="icon" type="image/png" href="/<?php echo APPLICATION_NAME; ?>/favicon.png">
+    <link rel="icon" type="image/png" href="/<?php echo APPLICATION_NAME; ?>/favicon.png">
 
 
 </head>
-<body>
-
 <script>
     var APPLICATION_NAME = '<?php echo APPLICATION_NAME;?>';
-    var redir = '<?php
-
-        if(!empty($_GET)){
-            echo @$_GET['redir'];
-        }
-
-
-        ?>';
 </script>
+<body>
 
 <nav>
     <div class="nav-wrapper red darken-4">
@@ -41,6 +24,8 @@ if (isset($_SESSION['UserID'])) {
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/<?=APPLICATION_NAME?>/About/home">Guide</a></li>
                 <li><a href="/<?=APPLICATION_NAME?>/About/about">About</a></li>
+                <li>|</li>
+                <li><a href="/<?=APPLICATION_NAME?>/Login/home">Login</a></li>
             </ul>
         </div>
     </div>
@@ -51,31 +36,20 @@ if (isset($_SESSION['UserID'])) {
         <div class="row">
             <div class="col s12 m9 l9 offset-m1 offset-l1" style="margin-top:13% !important;">
                 <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="/project/assets/img/img_5.jpg" class="responsive-img">
-                    </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <form id="login-form">
+                            <form id="reset-form">
                                 <div class="input-field">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="user-name" name="user-name" type="text" class="validate">
-                                    <label for="user-name">User</label>
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">vpn_key</i>
-                                    <input id="pass-user" name="pass-user" type="password" class="validate">
-                                    <label for="pass-user">Password</label>
+                                    <i class="material-icons prefix">email</i>
+                                    <input placeholder="exemplo@fatec.sp.gov.br" id="email-user" name="email-user" type="email" class="validate">
+                                    <label for="email-user">Informe o e-mail para receber a nova senha:</label>
                                 </div>
                             </form>
                         </div>
                         <div class="card-action">
-                            <a href="#" class="btn right grey darken-4" id="login">Login</a>
+                            <a href="#" class="btn right grey darken-4" id="enviar">Enviar</a>
                         </div>
                     </div>
-                </div>
-                <div class="right">
-                    <a href="/<?=APPLICATION_NAME?>/Login/reset_password" >Esqueceu a senha?</a>
                 </div>
             </div>
         </div>
@@ -94,7 +68,7 @@ if (isset($_SESSION['UserID'])) {
 <script src="/project/assets/js/Core/materialize.min.js"></script>
 <script src="/project/assets/js/Core/jquery-3.3.1.min.js"></script>
 <script src="/project/assets/js/Core/jquery-ui.js"></script>
-<script src="/project/assets/js/Apps/Login/home.js"></script>
+<script src="/project/assets/js/Apps/Login/reset.js"></script>
 
 </body>
 </html>

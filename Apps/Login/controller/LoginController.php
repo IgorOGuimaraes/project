@@ -5,6 +5,7 @@
  * @description This controller is use on login interaction for the core
  */
 
+
 class LoginController extends Controller
 {
 
@@ -29,6 +30,60 @@ class LoginController extends Controller
         );
         //Add login view
         include 'Apps/Login/view/login.php';
+    }
+
+    public function reset_password()
+    {
+
+        $this->contentType(
+            'clean',
+            'Password Reset',
+            [
+                $this->_assets_path . 'js/Apps/Login/reset.js'
+            ]
+        );
+
+        //Add reset view
+        include 'Apps/Login/view/reset_password.php';
+
+    }
+
+    public function submit_new_password ()
+    {
+
+        $this->contentType('ajax');
+
+        include 'Core/vendor/Email.php';
+
+        // Set up requerid parameters
+        $smtp = array (
+            'debug'     => 2,
+            'host'      => SMTP_RELAY,
+            'auth'      => true,
+            'username'  => SMTP_EMAIL_USERNAME,
+            'password'  => SMTP_EMAIL_PASSWORD,
+            'secure'    => 'ssl',
+            'port'      => SMTP_PORT
+        );
+
+        $to = array(
+            array(
+                'name' => '',
+                'email' => $_POST['mail']
+            )
+        );
+
+        $subject = 'teste de envio da senha';
+        $html = '<h3>This is a title.</h3><p>This is a some text.</p>';
+        $from = array('name' => SMTP_EMAIL_GREET, 'email' => SMTP_EMAIL);
+
+
+        // Create a new instance and send email
+        $email = new Email(true, $smtp);
+        $email->mail($to, $subject, $html, $from);
+
+        echo json_encode(['status' => 'success']);
+
     }
 
     public function login_validate()
