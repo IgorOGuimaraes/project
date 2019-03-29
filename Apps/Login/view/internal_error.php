@@ -6,12 +6,12 @@
     <title>500 INTERNAL SERVER ERROR | Gabarit.IO</title>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Core/custom.css" type="text/css" rel="stylesheet"
+    <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Core/custom.css" type="text/css" rel="stylesheet"
           media="screen,projection"/>
-    <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet"
+    <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet"
           media="screen,projection"/>
-    <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Apps/Login/style.css" type="text/css" rel="stylesheet"/>
-    <link rel="icon" type="image/png" href="/<?php echo APPLICATION_NAME; ?>/favicon.png">
+    <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Apps/Login/style.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="<?php echo APPLICATION_NAME; ?>/favicon.png">
 
 
 </head>
@@ -34,13 +34,13 @@
                 <br>
                 <p class="header">Don't Panic! We are going to fix this!</p>
                 <br>
-                <a class="btn right" href="/<?php echo APPLICATION_NAME; ?>/login/home"><i class="material-icons left">home</i>GO HOME</a>
+                <a class="btn right" href="<?php echo APPLICATION_NAME; ?>/login/home"><i class="material-icons left">home</i>GO HOME</a>
             </span>
         </div>
     </div>
-    <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery-2.1.1.min.js"></script>
-    <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/materialize.min.js"></script>
-    <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery-ui.js"></script>
-    <script src="/<?php echo APPLICATION_NAME; ?>/assets/js/Core/app.js"></script>
+    <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/materialize.min.js"></script>
+    <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery-ui.js"></script>
+    <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/app.js"></script>
 </body>
 </html>

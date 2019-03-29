@@ -9,7 +9,8 @@
 class LoginController extends Controller
 {
 
-    private $_assets_path = '/' . APPLICATION_NAME . '/assets/';
+    private $_assets_path = APPLICATION_NAME . '/assets/';
+    private $_password = '';
 
     /**
      * This is default method on the app
@@ -73,8 +74,10 @@ class LoginController extends Controller
             )
         );
 
+        $this->gerar_senha(8, true, true, true, true);
+
         $subject = 'teste de envio da senha';
-        $html = '<h3>This is a title.</h3><p>This is a some text.</p>';
+        $html = '<h3>This is a title.</h3><p>New password: ' . $this->_password .'</p>';
         $from = array('name' => SMTP_EMAIL_GREET, 'email' => SMTP_EMAIL);
 
 
@@ -84,6 +87,36 @@ class LoginController extends Controller
 
         echo json_encode(['status' => 'success']);
 
+    }
+
+    function gerar_senha($tamanho, $maiusculas, $minusculas, $numeros, $simbolos){
+        $ma = "ABCDEFGHIJKLMNOPQRSTUVYXWZ"; // $ma contem as letras maiúsculas
+        $mi = "abcdefghijklmnopqrstuvyxwz"; // $mi contem as letras minusculas
+        $nu = "0123456789"; // $nu contem os números
+        $si = "!@#$%¨&*()_+="; // $si contem os símbolos
+
+        if ($maiusculas){
+            // se $maiusculas for "true", a variável $ma é embaralhada e adicionada para a variável $senha
+            $this->_password .= str_shuffle($ma);
+        }
+
+        if ($minusculas){
+            // se $minusculas for "true", a variável $mi é embaralhada e adicionada para a variável $senha
+            $this->_password .= str_shuffle($mi);
+        }
+
+        if ($numeros){
+            // se $numeros for "true", a variável $nu é embaralhada e adicionada para a variável $senha
+            $this->_password .= str_shuffle($nu);
+        }
+
+        if ($simbolos){
+            // se $simbolos for "true", a variável $si é embaralhada e adicionada para a variável $senha
+            $this->_password .= str_shuffle($si);
+        }
+
+        // retorna a senha embaralhada com "str_shuffle" com o tamanho definido pela variável $tamanho
+        return substr(str_shuffle($this->_password),0,$tamanho);
     }
 
     public function login_validate()
@@ -107,19 +140,18 @@ class LoginController extends Controller
                 ]);
             } else {
 
-                $user_info = $model->getUserInfo($validate[0]['BasicID']);
+                $user_info = $model->getUserInfo($validate[0]['PessoaID']);
 
-                $_SESSION['BasicID'] = $validate[0]['BasicID'];
-                $_SESSION['UserID'] = $validate[0]['UserID'];
+                $_SESSION['ProfessorID'] = $validate[0]['ProfessorID'];
+                $_SESSION['PessoaID'] = $validate[0]['PessoaID'];
                 $_SESSION['UserName'] = $validate[0]['UserName'];
-                $_SESSION['FullName'] = $user_info[0]['Name'];
-                $_SESSION['Email'] = $user_info[0]['Email'];
-                $_SESSION['Birthday'] = $user_info[0]['Birthday'];
+                $_SESSION['Email'] = $validate[0]['Email'];
+                $_SESSION['FullName'] = $user_info[0]['NomePessoa'];
 
                 $response =  json_encode([
                     'Status' => 'Success',
                     'message' => 'Login success!',
-                    'location' => '/' . APPLICATION_NAME . '/dashboard/home/',
+                    'location' => APPLICATION_NAME . '/dashboard/home/',
                 ]);
 
                 //Add login view

@@ -51,17 +51,17 @@ header, main, footer {
     position:fixed; bottom:0px; width:100%
 }
 
-@font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../font/material/MaterialIcons-Regular.eot);
-    src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(../font/material/MaterialIcons-Regular.woff2) format('woff2'),
-    url(../font/material/MaterialIcons-Regular.woff) format('woff'),
-    url(../font/material/MaterialIcons-Regular.ttf) format('truetype');
-}
+/*@font-face {*/
+    /*font-family: 'Material Icons';*/
+    /*font-style: normal;*/
+    /*font-weight: 400;*/
+    /*src: url(../font/material/MaterialIcons-Regular.eot);*/
+    /*src: local('Material Icons'),*/
+    /*local('MaterialIcons-Regular'),*/
+    /*url(../font/material/MaterialIcons-Regular.woff2) format('woff2'),*/
+    /*url(../font/material/MaterialIcons-Regular.woff) format('woff'),*/
+    /*url(../font/material/MaterialIcons-Regular.ttf) format('truetype');*/
+/*}*/
 
 .material-icons {
     font-family: 'Material Icons';
@@ -83,58 +83,58 @@ header, main, footer {
     font-feature-settings: 'liga';
 }
 
-@font-face {
-    font-family: TeleGroteskUlt-Regular;
-    src: url(../font/t-systems/TeleGroteskUlt-Regular.svg) format('svg')
-}
+/*@font-face {*/
+    /*font-family: TeleGroteskUlt-Regular;*/
+    /*src: url(../font/t-systems/TeleGroteskUlt-Regular.svg) format('svg')*/
+/*}*/
 
-@font-face {
-    font-family: TeleGroteskUltra;
-    src: url(../font/t-systems/TeleGroteskUltra.eot);
-    src: url(../font/t-systems/TeleGroteskUltra.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskUltra.woff) format('woff'), url(../font/t-systems/TeleGroteskUltra.ttf) format('truetype')
-}
+/*@font-face {*/
+    /*font-family: TeleGroteskUltra;*/
+    /*src: url(../font/t-systems/TeleGroteskUltra.eot);*/
+    /*src: url(../font/t-systems/TeleGroteskUltra.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskUltra.woff) format('woff'), url(../font/t-systems/TeleGroteskUltra.ttf) format('truetype')*/
+/*}*/
 
-@font-face {
-    font-family: TeleLogo;
-    src: url(../font/t-systems/TeleLogo.eot);
-    src: url(../font/t-systems/TeleLogo.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleLogo.woff) format('woff'), url(../font/t-systems/TeleLogo.ttf) format('truetype'), url(../font/t-systems/TeleLogo.svg) format('svg')
-}
+/*@font-face {*/
+    /*font-family: TeleLogo;*/
+    /*src: url(../font/t-systems/TeleLogo.eot);*/
+    /*src: url(../font/t-systems/TeleLogo.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleLogo.woff) format('woff'), url(../font/t-systems/TeleLogo.ttf) format('truetype'), url(../font/t-systems/TeleLogo.svg) format('svg')*/
+/*}*/
 
-@font-face {
-    font-family: TeleGroteskNormal;
-    src: url(../font/t-systems/TeleGroteskNormal.eot);
-    src: url(../font/t-systems/TeleGroteskNormal.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskNormal.woff) format('woff'), url(../font/t-systems/TeleGroteskNormal.ttf) format('truetype'), url(../font/t-systems/TeleGroteskNormal.svg) format('svg')
-}
+/*@font-face {*/
+    /*font-family: TeleGroteskNormal;*/
+    /*src: url(../font/t-systems/TeleGroteskNormal.eot);*/
+    /*src: url(../font/t-systems/TeleGroteskNormal.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskNormal.woff) format('woff'), url(../font/t-systems/TeleGroteskNormal.ttf) format('truetype'), url(../font/t-systems/TeleGroteskNormal.svg) format('svg')*/
+/*}*/
 
-@font-face {
-    font-family: TeleGroteskHeadline-Ultra;
-    src: url(../font/t-systems/TeleGroteskHeadline-Ultra.ttf);
-    src: url(../font/t-systems/TeleGroteskHeadline-Ultra.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHeadline-Ultra.woff) format('woff'), url(../font/t-systems/TeleGroteskHeadline-Ultra.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHeadline-Ultra.svg) format('svg')
-}
+/*@font-face {*/
+    /*font-family: TeleGroteskHeadline-Ultra;*/
+    /*src: url(../font/t-systems/TeleGroteskHeadline-Ultra.ttf);*/
+    /*src: url(../font/t-systems/TeleGroteskHeadline-Ultra.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHeadline-Ultra.woff) format('woff'), url(../font/t-systems/TeleGroteskHeadline-Ultra.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHeadline-Ultra.svg) format('svg')*/
+/*}*/
 
-@font-face {
-    font-family: TeleGroteskHeadline-Regular;
-    src: url(../font/t-systems/TeleGroteskHeadline-Regular.eot);
-    src: url(../font/t-systems/TeleGroteskHeadline-Regular.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHeadline-Regular.woff) format('woff'), url(../font/t-systems/TeleGroteskHeadline-Regular.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHeadline-Regular.svg) format('svg')
-}
+/*@font-face {*/
+    /*font-family: TeleGroteskHeadline-Regular;*/
+    /*src: url(../font/t-systems/TeleGroteskHeadline-Regular.eot);*/
+    /*src: url(../font/t-systems/TeleGroteskHeadline-Regular.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHeadline-Regular.woff) format('woff'), url(../font/t-systems/TeleGroteskHeadline-Regular.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHeadline-Regular.svg) format('svg')*/
+/*}*/
 
-@font-face {
-    font-family: TeleGroteskHalbfett;
-    src: url(../font/t-systems/TeleGroteskHalbfett.eot);
-    src: url(../font/t-systems/TeleGroteskHalbfett.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHalbfett.woff) format('woff'), url(../font/t-systems/TeleGroteskHalbfett.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHalbfett.svg) format('svg')
-}
+/*@font-face {*/
+    /*font-family: TeleGroteskHalbfett;*/
+    /*src: url(../font/t-systems/TeleGroteskHalbfett.eot);*/
+    /*src: url(../font/t-systems/TeleGroteskHalbfett.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskHalbfett.woff) format('woff'), url(../font/t-systems/TeleGroteskHalbfett.ttf) format('truetype'), url(../font/t-systems/TeleGroteskHalbfett.svg) format('svg')*/
+/*}*/
 
-@font-face {
-    font-family: TeleGroteskFett;
-    src: url(../font/t-systems/TeleGroteskFett.eot);
-    src: url(../font/t-systems/TeleGroteskFett.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskFett.woff) format('woff'), url(../font/t-systems/TeleGroteskFett.ttf) format('truetype'), url(../font/t-systems/TeleGroteskFett.svg) format('svg')
-}
+/*@font-face {*/
+    /*font-family: TeleGroteskFett;*/
+    /*src: url(../font/t-systems/TeleGroteskFett.eot);*/
+    /*src: url(../font/t-systems/TeleGroteskFett.eot?#iefix) format('embedded-opentype'), url(../font/t-systems/TeleGroteskFett.woff) format('woff'), url(../font/t-systems/TeleGroteskFett.ttf) format('truetype'), url(../font/t-systems/TeleGroteskFett.svg) format('svg')*/
+/*}*/
 
-.font-telegrotesk{
+/*.font-telegrotesk{*/
 
-    font-family: TeleGroteskFet, TeleGroteskHal, sans-serif;
+    /*font-family: TeleGroteskFet, TeleGroteskHal, sans-serif;*/
 
-}
+/*}*/
 
 
 

@@ -38,13 +38,5 @@
         'Controller' => 'Apps/ManagementSubject/controller/ManagementSubjectController.php',
         'Name' => 'ManagementSubjectController',
         'Public' => false,
-    ),
-    'CALENDAR' =>
-        array (
-        'Model' => 'Apps/Calendar/model/CalendarModel.php',
-        'View' => 'Apps/Calendar/view/',
-        'Controller' => 'Apps/Calendar/controller/CalendarController.php',
-        'Name' => 'CalendarController',
-        'Public' => false,
-    ),
+    )
 );

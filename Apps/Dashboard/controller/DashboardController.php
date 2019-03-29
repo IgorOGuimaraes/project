@@ -9,7 +9,7 @@ class DashboardController extends Controller
     /**
      * @var string
      */
-    private $_assets_path = '/' . APPLICATION_NAME . '/assets/';
+    private $_assets_path = APPLICATION_NAME . '/assets/';
 
     /**
      *
@@ -24,7 +24,7 @@ class DashboardController extends Controller
         //Set content type as html page
         $this->contentType('html', 'Home',
             [
-                $this->_assets_path . '/js/Apps/Dashboard/home.js'
+                $this->_assets_path . 'js/Apps/Dashboard/home.js'
             ]);
 
         //add dashboard view
@@ -51,7 +51,7 @@ class DashboardController extends Controller
                 $this->_assets_path . 'js/Core/sweetalert2.all.min.js',
             ],
             [
-                $this->_assets_path . 'css/Core/sweetalert2.all.min.css'
+                $this->_assets_path . 'css/Core/sweetalert2.min.css'
             ]
         );
 
@@ -86,14 +86,14 @@ class DashboardController extends Controller
 
         if(empty($validate)) {
             $v = false;
-        } else if ($validate[0]['UserID'] != $_SESSION['UserID']){
+        } else if ($validate[0]['ProfessorID'] != $_SESSION['ProfessorID']){
             $v = false;
         }
 
         if($v){
             if($_POST['new_password'] == $_POST['confirm_new_password']){
                 $message = 'Update password successful!';
-                $model->setNewPassword($_POST['new_password'], $_SESSION['UserID']);
+                $model->setNewPassword($_POST['new_password'], $_SESSION['ProfessorID']);
             } else {
                 $message = 'New password don\'t confirmed!';
             }

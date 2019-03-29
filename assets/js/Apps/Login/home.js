@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('#login').on('click', function (){
         $.ajax({
             type: 'POST',
-            url: '/' + APPLICATION_NAME + '/Login/login_validate',
+            url: APPLICATION_NAME + '/Login/login_validate',
             data: $('#login-form').serialize(),
             success: function (responseData){
                 M.toast({html: responseData['message'], displayLength: 3000});

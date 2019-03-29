@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Gabarit.io | <?php echo $page_name; ?></title>
-    <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Core/custom.css" type="text/css" rel="stylesheet"
+    <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Core/custom.css" type="text/css" rel="stylesheet"
           media="screen,projection">
-    <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Core/ghpages-materialize.css" type="text/css"
+    <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Core/ghpages-materialize.css" type="text/css"
           rel="stylesheet" media="screen,projection">
-    <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Core/jquery.gridster.min.css" type="text/css"
+    <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Core/jquery.gridster.min.css" type="text/css"
           rel="stylesheet" media="screen,projection">
-    <link href="/<?php echo APPLICATION_NAME; ?>/assets/css/Core/introjs.min.css" type="text/css" rel="stylesheet"
+    <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Core/introjs.min.css" type="text/css" rel="stylesheet"
           media="screen,projection">
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/<?php echo APPLICATION_NAME; ?>/favicon.png">
+    <link rel="icon" type="image/png" href="<?php echo APPLICATION_NAME; ?>/favicon.png">
     <?php
     if (!empty($style)) {
 
@@ -62,36 +62,32 @@
     </div>
     <ul id="nav-mobile" class="sidenav sidenav-fixed t-red collapsible">
         <li class="logo">
-            <a id="logo-container" href="/<?php echo APPLICATION_NAME; ?>">
+            <a id="logo-container">
                 <img class="responsive-image"
-                     src="/<?php echo APPLICATION_NAME; ?>/assets/img/logo.png" data-step="1"
-                     data-intro="Welcome to The New DAT Automation Tool. Let's Begin!">
+                     src="<?php echo APPLICATION_NAME; ?>/assets/img/logo.png">
             </a>
         </li>
         <hr>
 
         <li class="bold">
-            <a target="" href="/<?php echo APPLICATION_NAME; ?>/Dashboard/home" class="waves-effect waves-teal white-text">Dashboard<i class="material-icons white-text">dashboard</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/Dashboard/home" class="waves-effect waves-teal white-text">Gráficos<i class="material-icons white-text">dashboard</i></a>
         </li>
         <li class="bold">
-            <a target="" href="/<?php echo APPLICATION_NAME; ?>/ManagementStudent/home" class="waves-effect waves-teal white-text">Management Student<i class="material-icons white-text">people</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementStudent/home" class="waves-effect waves-teal white-text">Gerenciamento de Aluno<i class="material-icons white-text">people</i></a>
         </li>
         <li class="bold">
-            <a target="" href="/<?php echo APPLICATION_NAME; ?>/ManagementSubject/home" class="waves-effect waves-teal white-text">Management Subject<i class="material-icons white-text">content_paste</i></a>
-        </li>
-        <li class="bold">
-            <a target="" href="/<?php echo APPLICATION_NAME; ?>/Calendar/home" class="waves-effect waves-teal white-text">Calendar<i class="material-icons white-text">event</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementSubject/home" class="waves-effect waves-teal white-text">Gerenciamento de Disciplinas<i class="material-icons white-text">content_paste</i></a>
         </li>
 
         <hr>
         <li class="bold">
-            <a target="" href="/<?php echo APPLICATION_NAME; ?>/dashboard/guide" class="waves-effect waves-teal white-text">Guide<i class="material-icons white-text">import_contacts</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/dashboard/guide" class="waves-effect waves-teal white-text">Manual<i class="material-icons white-text">import_contacts</i></a>
         </li>
         <li class="bold">
-            <a target="" href="/<?php echo APPLICATION_NAME; ?>/dashboard/settings" class="waves-effect waves-teal white-text">Settings<i class="material-icons white-text">settings</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/dashboard/settings" class="waves-effect waves-teal white-text">Configuração<i class="material-icons white-text">settings</i></a>
         </li>
         <li class="bold">
-            <a target="" href="/<?php echo APPLICATION_NAME; ?>/login/logout/" class="waves-effect waves-teal white-text">Logout<i class="material-icons white-text">exit_to_app</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/login/logout/" class="waves-effect waves-teal white-text">Logout<i class="material-icons white-text">exit_to_app</i></a>
         </li>
     </ul>
     <div class="patreon-ad t-red"><a href="http://fatecsbc.edu.br/" target="_blank" class="waves-effect tx-white">Copyright © <?php echo date('Y'); ?> FATEC SBC</a></div>

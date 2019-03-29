@@ -105,7 +105,7 @@ abstract class Controller implements IAppCore
                 define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
                 if (!IS_AJAX) {
 
-                    header('Location: /' . APPLICATION_NAME . '/login/home/?redir=' . $_SERVER['REQUEST_URI']);
+                    header('Location: ' . APPLICATION_NAME . '/login/home/?redir=' . $_SERVER['REQUEST_URI']);
                     die;
                 };
                 break;
@@ -149,9 +149,9 @@ abstract class Controller implements IAppCore
 
         if ($access == true) {
 
-            if (empty($_SESSION['UserID'])) {
+            if (empty($_SESSION['ProfessorID'])) {
 
-                header('Location:  /' . APPLICATION_NAME . '/login/home/?redir=' . $_SERVER['REQUEST_URI']);
+                header('Location: ' . APPLICATION_NAME . '/login/home/?redir=' . $_SERVER['REQUEST_URI']);
                 die;
             }
 

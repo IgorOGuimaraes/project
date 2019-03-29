@@ -11,7 +11,7 @@ ini_set('max_execution_time', 60);
 define('CHARSET', 'utf8');
 
 //APPLICATION NAME, SAME AS THE PATH(CHAR)
-define('APPLICATION_NAME', 'project');
+define('APPLICATION_NAME', '/project');
 
 //Database Host
 define('DB_HOST', 'localhost');

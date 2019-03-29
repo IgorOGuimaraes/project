@@ -39,7 +39,7 @@ $(document).ready(function () {
                 if(validate()) {
                     $.ajax({
                         type: 'POST',
-                        url: '/' +APPLICATION_NAME + '/Dashboard/new_password',
+                        url: APPLICATION_NAME + '/Dashboard/new_password',
                         data: $('#reset_pass_form').serialize(),
                         success: function (responseData){
                             M.toast({html: responseData['message'], displayLength: 3000});

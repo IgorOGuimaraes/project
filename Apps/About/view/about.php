@@ -14,7 +14,7 @@
     <title>Gabarit.IO | About</title>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <link href="/project/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?=APPLICATION_NAME?>/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
 </head>
@@ -23,10 +23,10 @@
 <nav>
     <div class="nav-wrapper red darken-4">
         <div class="container">
-            <a href="/<?=APPLICATION_NAME?>/Login/home" class="brand-logo">Gabarit.IO</a>
+            <a href="<?=APPLICATION_NAME?>/Login/home" class="brand-logo">Gabarit.IO</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/<?=APPLICATION_NAME?>/About/home">Guide</a></li>
-                <li><a href="/<?=APPLICATION_NAME?>/Login/home">Login</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/About/home">Guide</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/Login/home">Login</a></li>
             </ul>
         </div>
     </div>
@@ -45,16 +45,13 @@
                 <p>O diferencial dessa plataforma está no uso de inteligência artificial para correção das provas. Além disso, o fato de ser integrado e disponibilizado via web, possibilita que o professor tenha acesso a dados estatísticos sobre sua turma e acompanhe o desenvolvimento dos alunos durante o semestre, podendo analisar resultados ao longo do tempo.</p>
                 <p>Esta monografia compõe-se das seguintes seções: Capítulo 1 – Fundamentação Teórica, com as discussões dos autores em que se baseia o projeto sobre inteligência artificial, Android®®, tecnologias que serão utilizadas no desenvolvimento da aplicação WEB, como: HTML, JavaScript, PHP, CSS, e Banco de dados; Capítulo 2 – Metodologia, com as discussões relativas ao planejamento do trabalho; Capítulo 3 – Desenvolvimento, apresentando o passo a passo da sua consecução e os resultados; e finalmente, as Considerações Finais, com as discussões decorrentes e sugestões para futuras pesquisas.</p>
 
-<!--                <hr><br>-->
-<!---->
-<!--                <h5 class="header">Members</h5>-->
             </div>
         </div>
     </div>
     </div>
 </main>
 
-<footer class="page-footer red darken-4" style="bottom: 0; position: relative; width: 100%;">
+<footer class="page-footer red darken-4" style="bottom: 0; position: fixed; width: 100%;">
     <div class="footer-copyright">
         <div class="container center">
             Copyright © 2018 - FATEC SBC | Faculdade de Tecnologia
@@ -63,9 +60,9 @@
 </footer>
 
 <!--  Scripts-->
-<script src="/project/assets/js/Core/materialize.min.js"></script>
-<script src="/project/assets/js/Core/jquery-3.3.1.min.js"></script>
-<script src="/project/assets/js/Core/jquery-ui.js"></script>
+<script src="<?=APPLICATION_NAME?>/assets/js/Core/materialize.min.js"></script>
+<script src="<?=APPLICATION_NAME?>/assets/js/Core/jquery-3.3.1.min.js"></script>
+<script src="<?=APPLICATION_NAME?>/assets/js/Core/jquery-ui.js"></script>
 
 </body>
 </html>

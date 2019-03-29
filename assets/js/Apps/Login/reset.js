@@ -22,7 +22,7 @@ $(document).ready(function () {
         if(validate()){
             $.ajax({
                 type: 'POST',
-                url: '/' + APPLICATION_NAME + '/Login/submit_new_password',
+                url: APPLICATION_NAME + '/Login/submit_new_password',
                 data: 'mail=' + $('#email-user').val(),
                 success: function (responseData){
                     M.toast({html: 'Password sending', displayLength: 3000});

@@ -10,14 +10,14 @@ class LoginModel extends Model {
     public function getValidateUser($user)
     {
 
-        return $this->connection->query("SELECT * FROM tb_core_users WHERE UserName = '" . $user['user-name'] . "' AND Password = '" . $user['pass-user'] . "'")->fetchAll();
+        return $this->connection->query("SELECT * FROM tb_core_professor WHERE UserName = '" . $user['user-name'] . "' AND Password = '" . $user['pass-user'] . "'")->fetchAll();
 
     }
 
-    public function getUserInfo($basicID)
+    public function getUserInfo($PessoaID)
     {
 
-        return $this->connection->query("SELECT * FROM tb_core_basic WHERE BasicID = " . $basicID)->fetchAll();
+        return $this->connection->query("SELECT * FROM tb_core_pessoa WHERE PessoaID = " . $PessoaID)->fetchAll();
 
     }
 

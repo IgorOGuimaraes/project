@@ -8,7 +8,7 @@ class DashboardModel extends Model {
     public function setPasswordValid($pass)
     {
 
-        return $this->connection->query("SELECT UserID FROM  tb_core_users WHERE UserName = '" . $_SESSION['UserName'] . "' AND Password = '" . $pass . "'")->fetchAll();
+        return $this->connection->query("SELECT ProfessorID FROM  tb_core_professor WHERE UserName = '" . $_SESSION['UserName'] . "' AND Password = '" . $pass . "'")->fetchAll();
 
     }
 
@@ -16,9 +16,9 @@ class DashboardModel extends Model {
     {
 
         $this->connection->update(
-            'tb_core_users',
+            'tb_core_professor',
             ['Password' => $pass],
-            ['UserID' => $userID]
+            ['ProfessorID' => $userID]
         );
 
         return $this->connection->id();

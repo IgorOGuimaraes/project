@@ -42,7 +42,7 @@ if (isset($core_routes[$call_c])) {
     } catch (Exception $controller_error_l) {
 
         $controller_error = $controller_error_l;
-        header('Location: /project/login/internal_error');
+        header('Location: ' . APPLICATION_NAME . '/login/internal_error');
 
     }
 
@@ -59,20 +59,20 @@ if (isset($core_routes[$call_c])) {
 
         } catch (Exception $e) {
 
-            header('Location: /project/login/internal_error');
+            header('Location: ' . APPLICATION_NAME . '/login/internal_error');
             die;
 
         }
 
 
         if (method_exists($current_model, $url_to_array[3])) {
-            header('Location: /project/login/home/?redir=' . $_SERVER['REQUEST_URI']);
+            header('Location: ' . APPLICATION_NAME . '/login/home/?redir=' . $_SERVER['REQUEST_URI']);
             die;
         }
 
     } else {
 
-        header('Location: /project/login/not_found');
+        header('Location: ' . APPLICATION_NAME . '/login/not_found');
         die;
     }
 
@@ -88,7 +88,7 @@ if (isset($core_routes[$call_c])) {
     $controller = new LoginController($core_routes);
 
     $controller->home();
-    header('Location: /project/login/home/?redir=' . $_SERVER['REQUEST_URI']);
+    header('Location: ' . APPLICATION_NAME . '/login/home/?redir=' . $_SERVER['REQUEST_URI']);
     die;
 
 }

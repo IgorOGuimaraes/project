@@ -14,7 +14,7 @@
     <title>Gabarit.IO | About</title>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <link href="/project/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?=APPLICATION_NAME?>/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
 </head>
@@ -25,8 +25,8 @@
         <div class="container">
             <a href="#" class="brand-logo">Gabarit.IO</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/<?=APPLICATION_NAME?>/About/about">About</a></li>
-                <li><a href="/<?=APPLICATION_NAME?>/Login/home">Login</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/About/about">About</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/Login/home">Login</a></li>
             </ul>
         </div>
     </div>
@@ -54,9 +54,9 @@
 </footer>
 
 <!--  Scripts-->
-<script src="/project/assets/js/Core/materialize.min.js"></script>
-<script src="/project/assets/js/Core/jquery-3.3.1.min.js"></script>
-<script src="/project/assets/js/Core/jquery-ui.js"></script>
+<script src="<?=APPLICATION_NAME?>/assets/js/Core/materialize.min.js"></script>
+<script src="<?=APPLICATION_NAME?>/assets/js/Core/jquery-3.3.1.min.js"></script>
+<script src="<?=APPLICATION_NAME?>/assets/js/Core/jquery-ui.js"></script>
 
 </body>
 </html>

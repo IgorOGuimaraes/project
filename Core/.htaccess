@@ -1,22 +1,2 @@
-Options +FollowSymLinks
-RewriteEngine On
-
-#RewriteCond %{HTTPS} !=on
-#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteCond %{SCRIPT_FILENAME} !-f
- 
-RewriteRule ^.*$ ./index.php
-
-
-#php_value session.cookie_httponly 1
-#php_value session.cookie_secure 1
-
-ErrorDocument 403 /material/message/denied
-
-<Files config.php>
-    Order Deny,Allow
-        Deny from all
-        Allow from 127.0.0.1
-</Files>
+Order deny,allow
+Deny from all
