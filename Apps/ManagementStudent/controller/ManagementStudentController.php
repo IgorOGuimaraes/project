@@ -62,4 +62,35 @@ class ManagementStudentController extends Controller
 
     }
 
+    public function new_aluno()
+    {
+
+        $this->contentType('ajax');
+        $model = new ManagementStudentModel();
+
+        $nome_aluno = $_POST['nome_aluno'];
+        $ra_aluno = $_POST['ra_aluno'];
+
+        $data = [];
+
+        foreach ($nome_aluno as $key => $value)
+        {
+            $data [] = [
+                'Nome' => $value,
+                'RA' => $ra_aluno[$key]
+            ];
+
+            $id_pessoa = $model->setNewPessoa($value);
+            $id_aluno = $model->setNewAluno($id_pessoa, $ra_aluno[$key]);
+        }
+
+        echo json_encode(
+            [
+                'status' => 'success',
+                'data' => $data,
+                'message' => 'Aluno(s) salvos com sucesso!'
+            ]
+        );
+
+    }
 }

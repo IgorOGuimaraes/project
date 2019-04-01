@@ -32,22 +32,22 @@ define('DB_NAME', 'project');
 define('DB_PORT', 3306);
 
 //EMAIL OF THE APPLICATION(CHAR)
-define('SMTP_EMAIL', 'noreply@gabarit-io.com.br');
+define('SMTP_EMAIL', 'no-reply@gabarit.io.com.br');
 
 //EMAIL OF THE APPLICATION(CHAR)
 define('SMTP_EMAIL_GREET', 'Gabarit IO');
 
 //RELAY PORT(INT)
-define('SMTP_PORT', 465);
+define('SMTP_PORT', 587);
 
 //RELAY SERVER(CHAR)
 define('SMTP_RELAY', 'smtp.gmail.com');
 
 //RELAY SERVER(CHAR)
-define('SMTP_EMAIL_USERNAME', 'ig.oliveragui@gmail.com');
+define('SMTP_EMAIL_USERNAME', 'project.gabaritio@gmail.com');
 
 //RELAY SERVER(CHAR)
-define('SMTP_EMAIL_PASSWORD', 'dfxpaocoanyaqlnl');
+define('SMTP_EMAIL_PASSWORD', 'itytjkwgaxisvlll');
 
 define('APPLICATION_VERSION', 1.00);
 

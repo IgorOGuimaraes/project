@@ -53,39 +53,50 @@ class LoginController extends Controller
     {
 
         $this->contentType('ajax');
+        $model = new LoginModel();
 
-        include 'Core/vendor/Email.php';
+        $validate = $model->getEmailTeacher($_POST['mail']);
 
-        // Set up requerid parameters
-        $smtp = array (
-            'debug'     => 2,
-            'host'      => SMTP_RELAY,
-            'auth'      => true,
-            'username'  => SMTP_EMAIL_USERNAME,
-            'password'  => SMTP_EMAIL_PASSWORD,
-            'secure'    => 'ssl',
-            'port'      => SMTP_PORT
-        );
+        if(!empty($validate[0]['NomePessoa'])){
+            include 'Core/vendor/Email.php';
 
-        $to = array(
-            array(
-                'name' => '',
-                'email' => $_POST['mail']
-            )
-        );
+            // Set up requerid parameters
+            $smtp = array (
+                'debug'     => 2,
+                'host'      => SMTP_RELAY,
+                'auth'      => true,
+                'username'  => SMTP_EMAIL_USERNAME,
+                'password'  => SMTP_EMAIL_PASSWORD,
+                'secure'    => 'tls',
+                'port'      => SMTP_PORT
+            );
 
-        $this->gerar_senha(8, true, true, true, true);
+            $to = array(
+                array(
+                    'name' => $validate[0]['NomePessoa'],
+                    'email' => $_POST['mail']
+                )
+            );
 
-        $subject = 'teste de envio da senha';
-        $html = '<h3>This is a title.</h3><p>New password: ' . $this->_password .'</p>';
-        $from = array('name' => SMTP_EMAIL_GREET, 'email' => SMTP_EMAIL);
+            $pass = $this->gerar_senha(8, true, true, true, true);
+            $model->setNewPasswor($_POST['mail'], md5($pass));
+
+            $subject = 'Reset de senha!';
+            $html = '<h3>Sua nova senha foi gerada.</h3><p>User Name: ' .$validate[0]['UserName']. '</p><p>New password: ' . $pass .'</p>';
+            $html .= '</br></br><h4>Atenciosamente,</h4><h4>Equipe Gabarit.IO</h4>';
+            $from = array('name' => SMTP_EMAIL_GREET, 'email' => SMTP_EMAIL);
 
 
-        // Create a new instance and send email
-        $email = new Email(true, $smtp);
-        $email->mail($to, $subject, $html, $from);
+            // Create a new instance and send email
+            $email = new Email(true, $smtp);
+            $email->mail($to, $subject, $html, $from);
 
-        echo json_encode(['status' => 'success']);
+            echo json_encode(['status' => 'success', 'message' => 'Nova senha enviada!']);
+
+        } else {
+            echo json_encode(['status' => 'success', 'message' => 'Usuário não localizado!']);
+            die();
+        }
 
     }
 
@@ -93,7 +104,7 @@ class LoginController extends Controller
         $ma = "ABCDEFGHIJKLMNOPQRSTUVYXWZ"; // $ma contem as letras maiúsculas
         $mi = "abcdefghijklmnopqrstuvyxwz"; // $mi contem as letras minusculas
         $nu = "0123456789"; // $nu contem os números
-        $si = "!@#$%¨&*()_+="; // $si contem os símbolos
+        $si = "!@#$%&*_+="; // $si contem os símbolos
 
         if ($maiusculas){
             // se $maiusculas for "true", a variável $ma é embaralhada e adicionada para a variável $senha

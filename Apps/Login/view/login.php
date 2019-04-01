@@ -69,7 +69,7 @@ if (isset($_SESSION['UserID'])) {
                             </form>
                         </div>
                         <div class="card-action">
-                            <a href="#" class="btn right grey darken-4" id="login">Login</a>
+                            <a class="btn right grey darken-4" id="login">Login</a>
                         </div>
                     </div>
                 </div>

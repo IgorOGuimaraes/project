@@ -78,17 +78,7 @@ if (isset($core_routes[$call_c])) {
 
 } else {
 
-    //Add the required Model
-    require_once ('Apps/Login/model/LoginModel.php');
-
-    //Add the required controller
-    require_once ('Apps/Login/controller/LoginController.php');
-
-    //Start the controller
-    $controller = new LoginController($core_routes);
-
-    $controller->home();
-    header('Location: ' . APPLICATION_NAME . '/login/home/?redir=' . $_SERVER['REQUEST_URI']);
+    header('Location: ' . APPLICATION_NAME . '/login/home');
     die;
 
 }

@@ -25,9 +25,10 @@ $(document).ready(function () {
                 url: APPLICATION_NAME + '/Login/submit_new_password',
                 data: 'mail=' + $('#email-user').val(),
                 success: function (responseData){
-                    M.toast({html: 'Password sending', displayLength: 3000});
+                    M.toast({html: responseData['message'], displayLength: 3000});
                 },
-                error: function () {
+                error: function (e) {
+                    console.log(e);
                     M.toast({html: 'Something went wrong', displayLength: 3000});
                 }
             });

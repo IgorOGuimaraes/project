@@ -1,6 +1,3 @@
-<?php
-$url_to_array = explode("/", $_SERVER['REQUEST_URI']);
-?>
 </main>
 <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/jquery-3.3.1.min.js"></script>
 <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/materialize.min.js"></script>
@@ -9,10 +6,6 @@ $url_to_array = explode("/", $_SERVER['REQUEST_URI']);
 <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/intro.min.js"></script>
 <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/app.js"></script>
 <script src="<?php echo APPLICATION_NAME; ?>/assets/js/Core/loader.js"></script>
-<?php
-
-
-?>
 
 <?php
 
@@ -76,4 +69,3 @@ if(!empty($scripts)){
 </div>
 </body>
 </html>
-
