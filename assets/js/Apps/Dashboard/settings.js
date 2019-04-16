@@ -50,16 +50,14 @@ $(document).ready(function () {
         var pass = $('#last_password').val();
 
         Swal.fire({
-            title: "Are you sure?",
-            text: "You are going to chage the password?",
+            title: "Tem certeza?",
+            text: "Você deseja alterar a senha?",
             type: "warning",
             showCancelButton: true,
-            confirmButtonText: "Confirm",
-            cancelButtonText: "Cancel",
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "Cancelar",
             confirmButtonColor: '#11d65f',
-            cancelButtonColor: '#d33',
-            closeOnConfirm: false,
-            closeOnCancel: true
+            cancelButtonColor: '#d33'
         }).then((result) => {
             if(result.value) {
                 if(validate()) {

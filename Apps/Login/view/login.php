@@ -48,30 +48,29 @@ if (isset($_SESSION['UserID'])) {
 <main>
     <div class="container">
         <div class="row">
-            <div class="col s12 m9 l9 offset-m1 offset-l1" style="margin-top:13% !important;">
-                <div class="card horizontal">
+            <div class="col s12 m8 l8 offset-m2 offset-l2">
+                <div class="card">
                     <div class="card-image">
                         <img src="<?=APPLICATION_NAME?>/assets/img/img_5.jpg" class="responsive-img">
                     </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <form id="login-form">
-                                <div class="input-field">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="user-name" name="user-name" type="text" class="validate">
-                                    <label for="user-name">Usuário</label>
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">vpn_key</i>
-                                    <input id="pass-user" name="pass-user" type="password" class="validate">
-                                    <label for="pass-user">Senha</label>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="card-action">
-                            <a class="btn right grey darken-4" id="login">Login</a>
-                        </div>
+                    <div class="card-content">
+                        <form id="login-form">
+                            <div class="input-field">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="user-name" name="user-name" type="text" class="validate">
+                                <label for="user-name">Usuário</label>
+                            </div>
+                            <div class="input-field">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="pass-user" name="pass-user" type="password" class="validate">
+                                <label for="pass-user">Senha</label>
+                            </div>
+                        </form>
                     </div>
+                    <div class="card-action right">
+                        <a class="btn grey darken-4" id="login">Login</a>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="right">
                     <a href="<?=APPLICATION_NAME?>/Login/reset_password" >Esqueceu a senha?</a>
@@ -81,7 +80,7 @@ if (isset($_SESSION['UserID'])) {
     </div>
 </main>
 
-<footer class="page-footer red darken-4" style="bottom: 0; position: absolute; width: 100%;">
+<footer class="page-footer red darken-4" style="bottom: 0; position: fixed; width: 100%;">
     <div class="footer-copyright">
         <div class="container center">
             Copyright © 2018 - FATEC SBC | Faculdade de Tecnologia

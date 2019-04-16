@@ -56,7 +56,7 @@
     </div>
 </main>
 
-<footer class="page-footer red darken-4" style="bottom: 0; position: absolute; width: 100%;">
+<footer class="page-footer red darken-4" style="bottom: 0; position: fixed; width: 100%;">
     <div class="footer-copyright">
         <div class="container center">
             Copyright © 2018 - FATEC SBC | Faculdade de Tecnologia

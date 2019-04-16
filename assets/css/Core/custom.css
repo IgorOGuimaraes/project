@@ -624,3 +624,23 @@ input[type=textarea]:not(.browser-default):focus:not(readonly) {
     -webkit-box-shadow: 0 1px 0 0 #1063AD !important;
     box-shadow: 0 1px 0 0 #1063AD !important;
 }
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #fff !important;
+
+    background-color: #1063AD !important;
+
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    background-color: #1063AD !important;
+
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    outline: none;
+    background-color: #1063AD !important;
+    box-shadow: inset 0 0 3px #111
+}

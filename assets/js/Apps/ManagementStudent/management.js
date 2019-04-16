@@ -2,11 +2,14 @@ $(document).ready(function () {
 
     /*Initialization*/
     var id_lb = 0;
+    var id_aluno = 0;
     var datatable_aluno = $('#table_aluno');
 
     //Initialize modal
     var modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);
+
+    $('select').formSelect();
 
     /*Functions*/
     function loadDatatableAluno()
@@ -118,6 +121,30 @@ $(document).ready(function () {
     $(document.body).on('click', '#remove-user-fields', function (e) {
         e.preventDefault();
         $(this).parent('div').parent('div').remove();
+    });
+
+    $(document.body).on('click', '.open-view-disciplinas', function () {});
+
+    $(document.body).on('click', '.open-view-info', function () {
+        id_aluno = $(this).attr('name');
+        $('#modal-edit-aluno').modal('open');
+
+        $.ajax({
+            type: 'POST',
+            url: APPLICATION_NAME + '/ManagementStudent/view_aluno',
+            data: {alunoID: id_aluno},
+            success: function (responseData){
+                $('#nome-aluno').html(responseData['data'][0]['NomePessoa']);
+
+                $('#nome_aluno_view').val(responseData['data'][0]['NomePessoa']);
+                $('#ra_aluno_view').val(responseData['data'][0]['RA']);
+
+                M.updateTextFields();
+            },
+            error: function (){
+                M.toast({html: 'Something went wrong!', displayLength: 3000});
+            }
+        });
     });
 
 });

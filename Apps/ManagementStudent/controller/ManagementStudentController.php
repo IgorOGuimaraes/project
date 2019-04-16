@@ -48,7 +48,8 @@ class ManagementStudentController extends Controller
                 $data [] = [
                     'RA Aluno' => $aluno['RA'],
                     'Nome Aluno' => $aluno['NomePessoa'],
-                    'Editar' => '<a href="#" class="" id="open-view-info" name="' . $aluno['AlunoID'] . '"><i class="material-icons blue-text">launch</i></a>'
+                    'Disciplinas' => '<a href="#" class="open-view-disciplinas" id="" name="' . $aluno['AlunoID'] . '"><i class="material-icons blue-text">launch</i></a>',
+                    'Editar' => '<a href="#" class="open-view-info" id="" name="' . $aluno['AlunoID'] . '"><i class="material-icons blue-text">launch</i></a>'
                 ];
             }
         }
@@ -91,6 +92,18 @@ class ManagementStudentController extends Controller
                 'message' => 'Aluno(s) salvos com sucesso!'
             ]
         );
+
+    }
+
+    public function view_aluno()
+    {
+
+        $this->contentType('ajax');
+        $model = new ManagementStudentModel();
+
+        $data = $model->getAluno($_POST['alunoID']);
+
+        echo json_encode(['status' => 'success', 'data' => $data]);
 
     }
 }

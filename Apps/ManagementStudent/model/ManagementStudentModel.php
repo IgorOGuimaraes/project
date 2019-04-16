@@ -36,4 +36,9 @@ class ManagementStudentModel extends Model
         return $this->connection->id();
     }
 
+    public function getAluno($alunoID)
+    {
+        return $this->connection->query("SELECT * FROM tb_app_aluno AS aluno, tb_core_pessoa AS pessoa WHERE aluno.PessoaID = pessoa.PessoaID AND aluno.AlunoID = $alunoID")->fetchAll();
+    }
+
 }
