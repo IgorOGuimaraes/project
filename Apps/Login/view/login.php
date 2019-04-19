@@ -15,6 +15,7 @@ if (isset($_SESSION['UserID'])) {
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?php echo APPLICATION_NAME; ?>/assets/css/Core/custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link rel="icon" type="image/png" href="<?php echo APPLICATION_NAME; ?>/favicon.png">
 
 
@@ -34,24 +35,34 @@ if (isset($_SESSION['UserID'])) {
 </script>
 
 <nav>
-    <div class="nav-wrapper red darken-4">
+    <div class="nav-wrapper t-grey4">
         <div class="container">
-            <a href="#" class="brand-logo">Gabarit.IO</a>
+            <a class="brand-logo hide-on-med-and-down"><img src="<?=APPLICATION_NAME?>/assets/img/thumbnail_gabiri.io_logo.png" class="responsive-img" style="height: 35px;"></a>
+            <a data-target="slide-out" class="sidenav-trigger tx-grey5"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="<?=APPLICATION_NAME?>/About/home">Manual</a></li>
-                <li><a href="<?=APPLICATION_NAME?>/About/about">Sobre</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/About/home" class="tx-grey5">Manual</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/About/about" class="tx-grey5">Sobre</a></li>
+            </ul>
+            <ul id="slide-out" class="sidenav">
+                <li><a class="brand-logo"><img src="<?=APPLICATION_NAME?>/assets/img/thumbnail_gabiri.io_logo.png" class="responsive-img"></a></li>
+                <li>\n</li>
+                <li><a href="<?=APPLICATION_NAME?>/About/home" class="tx-grey5">Manual</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/About/about" class="tx-grey5">Sobre</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<main>
+<main style="margin-bottom: 65px;">
     <div class="container">
         <div class="row">
-            <div class="col s12 m8 l8 offset-m2 offset-l2">
+            <div class="col s12 m6 l6 offset-m3 offset-l3">
                 <div class="card">
                     <div class="card-image">
-                        <img src="<?=APPLICATION_NAME?>/assets/img/img_5.jpg" class="responsive-img">
+                        <div style="width: 50%; height: auto; margin-left: 25%;">
+                            <img src="<?=APPLICATION_NAME?>/assets/img/thumbnail_gabiri.io_icone.png" class="responsive-img"><br>
+                            <img src="<?=APPLICATION_NAME?>/assets/img/thumbnail_gabiri.io_logo.png" class="responsive-img">
+                        </div>
                     </div>
                     <div class="card-content">
                         <form id="login-form">
@@ -80,10 +91,10 @@ if (isset($_SESSION['UserID'])) {
     </div>
 </main>
 
-<footer class="page-footer red darken-4" style="bottom: 0; position: fixed; width: 100%;">
+<footer class="page-footer t-io-blue darken-4" style="bottom: 0; position: fixed; width: 100%;">
     <div class="footer-copyright">
         <div class="container center">
-            Copyright © 2018 - FATEC SBC | Faculdade de Tecnologia
+            Copyright © <?php echo date('Y'); ?> - Gabarit.IO
         </div>
     </div>
 </footer>
@@ -92,7 +103,7 @@ if (isset($_SESSION['UserID'])) {
 <script src="<?=APPLICATION_NAME?>/assets/js/Core/materialize.min.js"></script>
 <script src="<?=APPLICATION_NAME?>/assets/js/Core/jquery-3.3.1.min.js"></script>
 <script src="<?=APPLICATION_NAME?>/assets/js/Core/jquery-ui.js"></script>
-<script src="<?=APPLICATION_NAME?>/assets/js/Apps/Login/home.js"></script>
+<script src="<?=APPLICATION_NAME?>/assets/js/Apps/Login/home.js?v=2"></script>
 
 </body>
 </html>

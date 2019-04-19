@@ -45,7 +45,7 @@
 <script>var APPLICATION_NAME = '<?php echo APPLICATION_NAME;?>';</script>
 <header id="load-header" style="display: none;">
     <nav>
-        <div class="nav-wrapper t-grey5">
+        <div class="nav-wrapper t-io-blue">
             <div class="col s12 header">
                 <ul id="nav-mobile" class="right">
                     <li><i class="material-icons tx-white font-size-2">account_circle</i></li>
@@ -60,11 +60,11 @@
            class="button-collapse top-nav sidenav-trigger full hide-on-large-only">
             <i id="side-nav" class="material-icons tx-white">menu</i></a>
     </div>
-    <ul id="nav-mobile" class="sidenav sidenav-fixed t-red2 collapsible">
+    <ul id="nav-mobile" class="sidenav sidenav-fixed t-grey5 collapsible">
         <li class="logo">
             <a id="logo-container">
                 <img class="responsive-image"
-                     src="<?php echo APPLICATION_NAME; ?>/assets/img/logo.png">
+                     src="<?php echo APPLICATION_NAME; ?>/assets/img/thumbnail_gabiri.io_icone.png">
             </a>
         </li>
         <hr>
@@ -90,6 +90,6 @@
             <a target="" href="<?php echo APPLICATION_NAME; ?>/login/logout/" class="waves-effect waves-teal white-text">Logout<i class="material-icons white-text">exit_to_app</i></a>
         </li>
     </ul>
-    <div class="patreon-ad t-red2"><a href="http://fatecsbc.edu.br/" target="_blank" class="waves-effect tx-white">Copyright © <?php echo date('Y'); ?> FATEC SBC</a></div>
+    <div class="patreon-ad t-grey5"><a href="http://fatecsbc.edu.br/" target="_blank" class="waves-effect tx-white">Copyright © <?php echo date('Y'); ?> Gabarit.IO</a></div>
 </header>
 <main id="load-main" style="display: none;">

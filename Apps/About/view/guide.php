@@ -15,24 +15,32 @@
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <link href="<?=APPLICATION_NAME?>/assets/css/Core/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?=APPLICATION_NAME?>/assets/css/Core/custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
 </head>
 <body>
 
 <nav>
-    <div class="nav-wrapper red darken-4">
+    <div class="nav-wrapper t-grey4 darken-4">
         <div class="container">
-            <a href="#" class="brand-logo">Gabarit.IO</a>
+            <a class="brand-logo hide-on-med-and-down"><img src="<?=APPLICATION_NAME?>/assets/img/thumbnail_gabiri.io_logo.png" class="responsive-img" style="height: 35px;"></a>
+            <a data-target="slide-out" class="sidenav-trigger tx-grey5"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="<?=APPLICATION_NAME?>/About/about">About</a></li>
                 <li><a href="<?=APPLICATION_NAME?>/Login/home">Login</a></li>
+            </ul>
+            <ul id="slide-out" class="sidenav">
+                <li><a class="brand-logo"><img src="<?=APPLICATION_NAME?>/assets/img/thumbnail_gabiri.io_logo.png" class="responsive-img"></a></li>
+                <li>\n</li>
+                <li><a href="<?=APPLICATION_NAME?>/About/about" class="tx-grey5">About</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/Login/home" class="tx-grey5">Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<main>
+<main style="margin-bottom: 65px;">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -45,10 +53,10 @@
     </div>
 </main>
 
-<footer class="page-footer red darken-4" style="bottom: 0; position: fixed; width: 100%;">
+<footer class="page-footer t-io-blue darken-4" style="bottom: 0; position: fixed; width: 100%;">
     <div class="footer-copyright">
         <div class="container center">
-            Copyright © 2018 - FATEC SBC | Faculdade de Tecnologia
+            Copyright © <?php echo date('Y'); ?> - Gabarit.IO
         </div>
     </div>
 </footer>
@@ -57,6 +65,10 @@
 <script src="<?=APPLICATION_NAME?>/assets/js/Core/materialize.min.js"></script>
 <script src="<?=APPLICATION_NAME?>/assets/js/Core/jquery-3.3.1.min.js"></script>
 <script src="<?=APPLICATION_NAME?>/assets/js/Core/jquery-ui.js"></script>
+<script>
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+</script>
 
 </body>
 </html>
