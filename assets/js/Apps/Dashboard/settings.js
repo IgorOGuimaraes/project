@@ -70,11 +70,11 @@ $(document).ready(function () {
                             $('#reset_pass_form').trigger("reset");
                         },
                         error: function () {
-                            M.toast({html: 'Something went wrong', displayLength: 3000});
+                            M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
                         }
                     });
                 } else {
-                    M.toast({html: 'Complete all fields!', displayLength: 3000});
+                    M.toast({html: 'Complete todos os campos!', displayLength: 3000});
                 }
             }
         });
@@ -94,7 +94,7 @@ $(document).ready(function () {
                    }
                },
                error: function () {
-                   M.toast({html: 'Something went wrong!',displayLength: 3000});
+                   M.toast({html: 'Opsss, Algo deu errado!',displayLength: 3000});
                }
            });
        } else {
@@ -132,7 +132,7 @@ $(document).ready(function () {
                     $('#new_teacher_form').trigger('reset');
                 },
                 error: function () {
-                    M.toast({html: 'Something went wrong!', displayLength: 3000});
+                    M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
                 }
             });
         } else {

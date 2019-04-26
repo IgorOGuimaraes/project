@@ -24,7 +24,12 @@ class DashboardController extends Controller
         //Set content type as html page
         $this->contentType('html', 'Home',
             [
-                $this->_assets_path . 'js/Apps/Dashboard/home.js'
+                $this->_assets_path . 'js/Core/highcharts.js',
+                $this->_assets_path . 'js/Core/highcharts-more.js',
+                $this->_assets_path . 'js/Core/solid-gauge.js',
+                $this->_assets_path . 'js/Apps/Dashboard/home.js',
+            ], [
+                $this->_assets_path . 'css/Apps/Dashboard/dashboard.css',
             ]);
 
         //add dashboard view
@@ -92,13 +97,13 @@ class DashboardController extends Controller
 
         if($v){
             if($_POST['new_password'] == $_POST['confirm_new_password']){
-                $message = 'Update password successful!';
+                $message = 'Senha atualizada com sucesso!';
                 $model->setNewPassword(md5($_POST['new_password']), $_SESSION['ProfessorID']);
             } else {
-                $message = 'New password don\'t confirmed!';
+                $message = 'Nova senha não confere!';
             }
         } else {
-            $message = 'Last Password Invalid!';
+            $message = 'Senha Atual Inválida!';
         }
 
         echo json_encode(['message' => $message]);

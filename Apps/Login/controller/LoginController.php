@@ -139,7 +139,7 @@ class LoginController extends Controller
         if(empty($_POST)){
             echo json_encode([
                 'Status' => 'Invalid',
-                'message' => 'Complete all fields!'
+                'message' => 'Preencha todos os campos!'
             ]);
         } else {
             $validate = $model->getValidateUser($_POST);
@@ -147,7 +147,7 @@ class LoginController extends Controller
             if(empty($validate)){
                 echo json_encode([
                     'Status' => 'Invalid',
-                    'message' => 'User invalid!'
+                    'message' => 'Usuário ou senha inválidos!'
                 ]);
             } else {
 
@@ -161,7 +161,7 @@ class LoginController extends Controller
 
                 $response =  json_encode([
                     'Status' => 'Success',
-                    'message' => 'Login success!',
+                    'message' => 'Redirecionando .....',
                     'location' => APPLICATION_NAME . '/dashboard/home/',
                 ]);
 

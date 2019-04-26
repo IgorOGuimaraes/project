@@ -21,8 +21,9 @@ $(document).ready(function () {
                     }, 1000);
                 }
             },
-            error: function (){
-                M.toast({html: 'Something went wrong!', displayLength: 3000});
+            error: function (e){
+                M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
+                console.log(e);
             }
         });
     });

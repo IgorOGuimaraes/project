@@ -32,11 +32,11 @@ $(document).ready(function () {
                 },
                 error: function (e) {
                     console.log(e);
-                    M.toast({html: 'Something went wrong', displayLength: 3000});
+                    M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
                 }
             });
         } else {
-            M.toast({html: 'Please, complete field!', displayLength: 3000});
+            M.toast({html: 'Por favor, complete todos os campos!', displayLength: 3000});
         }
     });
 });
