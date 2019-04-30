@@ -53,7 +53,7 @@ $(document).ready(function () {
                 $('select').formSelect();
             },
             error: function () {
-                M.toast({html: 'Something went wrong!', displayLength: 3000});
+                M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
             }
         });
     }
@@ -104,7 +104,7 @@ $(document).ready(function () {
                 load_datatable();
             },
             error: function () {
-                M.toast({html: 'Something went wrong!', displayLength: 3000});
+                M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
             }
         });
     });
@@ -132,7 +132,7 @@ $(document).ready(function () {
                         load_datatable();
                     },
                     error: function () {
-                        M.toast({html: 'Something went wrong!', displayLength: 3000});
+                        M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
                     }
                 });
             }

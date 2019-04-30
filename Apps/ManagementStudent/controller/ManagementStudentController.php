@@ -23,7 +23,7 @@ class ManagementStudentController extends Controller
             [
                 $this->_assets_path . 'js/Core/datatables.min.js',
                 $this->_assets_path . 'js/Core/sweetalert2.all.min.js',
-                $this->_assets_path . 'js/Apps/ManagementStudent/management.js'
+                $this->_assets_path . 'js/Apps/ManagementStudent/management.js?v=2'
             ], [
                 $this->_assets_path . 'css/Core/datatables.min.css',
                 $this->_assets_path . 'css/Core/sweetalert2.min.css'
@@ -48,7 +48,8 @@ class ManagementStudentController extends Controller
                 $data [] = [
                     'RA Aluno' => $aluno['RA'],
                     'Nome Aluno' => $aluno['NomePessoa'],
-                    'Disciplinas' => '<a href="#" class="open-view-disciplinas" id="" name="' . $aluno['AlunoID'] . '"><i class="material-icons blue-text">launch</i></a>',
+                    'Deletar' => '<a href="#" class="delete-aluno" id="' .$aluno['PessoaID']. '" name="' . $aluno['AlunoID'] . '"><i class="material-icons red-text">delete</i></a>',
+                    'Disciplinas' => '<a href="#" class="open-view-disciplinas" id="' .$aluno['NomePessoa']. '" name="' . $aluno['AlunoID'] . '"><i class="material-icons blue-text">launch</i></a>',
                     'Editar' => '<a href="#" class="open-view-info" id="" name="' . $aluno['AlunoID'] . '"><i class="material-icons blue-text">launch</i></a>'
                 ];
             }
@@ -106,4 +107,104 @@ class ManagementStudentController extends Controller
         echo json_encode(['status' => 'success', 'data' => $data]);
 
     }
+
+    public function delete_aluno()
+    {
+
+        $this->contentType('ajax');
+        $model = new ManagementStudentModel();
+
+        $model->deleteAluno($_POST['idAluno']);
+        $model->deletePessoa($_POST['idPessoa']);
+
+        echo json_encode(['message' => 'Aluno excluido com sucesso!']);
+
+    }
+
+    public function infos_disciplina_curso()
+    {
+
+        $this->contentType('ajax');
+        $model = new ManagementStudentModel();
+
+        $data = $model->getDisciplina();
+        $data1 = $model->getCurso();
+
+        echo json_encode(['data' => $data, 'data1' => $data1]);
+
+    }
+
+    public function load_disciplinas_aluno()
+    {
+
+        $this->contentType('ajax');
+        $model = new ManagementStudentModel();
+
+        $data = [];
+
+        $result = $model->getDisciplinas($_GET['id_aluno']);
+
+        foreach ($result as $r) {
+            $data [] = [
+                'Curso' => $r['NomeCurso'],
+                'Disciplina' => $r['NomeDisciplina'],
+                'Periodo' => $r['Periodo'],
+                'Ano' => $r['Ano'],
+                'Semestre' => $r['Semestre'],
+                'Deletar' => '<a href="#" class="delete-turma" id="' .$_GET['id_aluno']. '" name="' . $r['TurmaID'] . '"><i class="material-icons red-text">delete</i></a>',
+            ];
+        }
+
+        echo json_encode(['data' => $data]);
+
+    }
+
+    public function add_disciplina_aluno()
+    {
+
+        $this->contentType('ajax');
+        $model = new ManagementStudentModel();
+
+        $disciplina = $_POST['disciplina-add'];
+        $curso = $_POST['nome_curso'];
+        $periodo = $_POST['periodo-add'];
+        $alunoID = $_POST['id_aluno'];
+
+        $validate = $model->getCursoDisciplina($disciplina, $curso);
+
+        if(empty($validate)){
+            echo json_encode(['status' => 'invalid', 'message' => 'Matéria não associada a este curso/periodo!']);
+            die;
+        }
+
+        $year = date('Y');
+        $mounth = date('m');
+        $semester = 1;
+
+        if($mounth >= 7) $semester = 2;
+
+        $turmaID = $model->getTurma($validate[0]['DisciplinaCursoID'], $periodo, $year, $semester);
+
+        if (empty($turmaID)){
+            echo json_encode(['status' => 'invalid', 'message' => 'Matéria não associada a este curso/turma!']);
+            die;
+        }
+        $model->setNewTurma($alunoID, $turmaID[0]['TurmaID']);
+
+        echo json_encode(['status' => 'success', 'message' => 'Disciplina associada ao aluno!', 'debug' => $turmaID]);
+
+    }
+
+    public function delete_disciplina()
+    {
+
+        $this->contentType('ajax');
+        $model = new ManagementStudentModel();
+
+        $model->deleteTurma($_POST['idTurma'], $_POST['idAluno']);
+
+        echo json_encode(['message' => 'Disciplina excluida com sucesso!']);
+
+    }
+
 }
