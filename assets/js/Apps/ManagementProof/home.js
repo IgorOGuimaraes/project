@@ -3,6 +3,7 @@ $(document).ready(function () {
     * Initialization
     * */
     var datatable_prova = $('#table_prova');
+    var id_gabarito = null;
 
     //Initialization datepicker
     var datepicker_element = document.querySelectorAll('.datepicker');
@@ -268,7 +269,7 @@ $(document).ready(function () {
     });
 
     $(document.body).on('click', '.open-view-info', function(){
-        var id_gabarito = $(this).attr('id');
+        id_gabarito = $(this).attr('id');
         var letter = ['A', 'B', 'C', 'D', 'E'];
 
         $('#modal-view-gabarito').modal('open');
@@ -284,6 +285,17 @@ $(document).ready(function () {
             success: function(responseData){
                 var Qtd_questoes = responseData['prova']['Qtd_questoes'];
                 var Qtd_alternativas = responseData['prova']['Qtd_alternativas'];
+
+                $('#curso_render').html('CURSO: ' + responseData['informations'][0]['CursoNome']);
+                $('#disciplina_render').html('Disciplina: ' + responseData['informations'][0]['NomeDisciplina']);
+                $('#professor_render').html('PROFESSOR: ' + responseData['informations'][0]['NomePessoa']);
+                $('#avaliacao_render').html('AVALIAÇÃO OFICIAL: ' + responseData['informations'][0]['ProvaOficial']);
+                $('#turno_render').html('TURNO: ' + responseData['informations'][0]['Periodo']);
+                $('#ciclo_render').html('CICLO: ' + responseData['informations'][0]['Ano'] + ' | ' + responseData['informations'][0]['Semestre'] + '° Sem');
+                $('#data_render').html('DATA: ' + responseData['informations'][0]['DataProva']);
+
+                $('#div_view_gabarito_1').empty();
+                $('#div_view_gabarito_2').empty();
 
                 var i = 1;
                 var j = 0;
@@ -316,5 +328,9 @@ $(document).ready(function () {
         });
     });
 
+
+    $('#gerar-gabaritos-turma').on('click', function(){
+        window.open(APPLICATION_NAME + '/ManagementProof/export/' + id_gabarito, '_blank');
+    });
 
 });

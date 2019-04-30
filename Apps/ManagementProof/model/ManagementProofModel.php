@@ -57,7 +57,19 @@ class ManagementProofModel extends Model
 
     public function getProva($GabaritoID)
     {
-        return $this->connection->query('SELECT * FROM tb_app_prova WHERE ProvaID = '.$GabaritoID)->fetchAll();
+        return $this->connection->query('SELECT 
+                p.FormatoGabarito AS FormatoGabarito,
+                p.DataProva AS DataProva,
+                p.VersaoProva AS VersaoProva,
+                p.ProvaOficial AS ProvaOficial,
+                t.Periodo AS Periodo,
+                t.Ano AS Ano,
+                t.Semestre AS Semestre,
+                cur.NomeCurso AS CursoNome,
+                d.NomeDisciplina AS NomeDisciplina,
+                pes.NomePessoa AS NomePessoa
+                FROM tb_app_prova AS p, tb_app_turma AS t, tb_app_disciplina_curso AS dc, tb_app_disciplina AS d, tb_app_curso AS cur, tb_core_professor AS pro, tb_core_pessoa AS pes 
+                WHERE p.ProvaID = '.$GabaritoID.' AND p.TurmaID = t.TurmaID AND t.DisciplinaCursoID = dc.DisciplinaCursoID AND dc.DisciplinaID = d.DisciplinaID AND dc.CursoID = cur.CursoID AND dc.ProfessorID = pro.ProfessorID AND pro.PessoaID = pes.PessoaID')->fetchAll();
     }
 
 }

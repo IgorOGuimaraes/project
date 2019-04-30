@@ -29,6 +29,22 @@ class ManagementProofController extends Controller
 
     }
 
+    public function export()
+    {
+
+        //Set this page with private access
+        $this->privateAccess(true);
+        //Set content type as html page
+        $this->contentType(
+            'clean',
+            'Export Proof'
+        );
+
+        //add management subject view
+        include 'Apps/ManagementProof/view/export_proof.php';
+
+    }
+
     public function load_prova()
     {
 
@@ -153,7 +169,8 @@ class ManagementProofController extends Controller
 
         echo json_encode([
             'status' => 'success',
-            'prova' => json_decode($prova[0]['FormatoGabarito'])
+            'prova' => json_decode($prova[0]['FormatoGabarito']),
+            'informations' => $prova
         ]);
 
     }

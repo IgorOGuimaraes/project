@@ -170,7 +170,7 @@
 
 <!-- Modal Vire Gabarito -->
 <div id="modal-view-gabarito" class="modal modal-fixed-footer">
-    <div class="modal-content">
+    <div class="modal-content" id="modal-content-view-gabarito">
         <div class="row">
             <!--[LINHA 1]-->
             <div class="col s12 m12 l12 center" style="border: black solid 2px;">
@@ -181,38 +181,38 @@
 
             <!--[LINHA 2]-->
             <div class="col s12 m12 l12" style="border: black solid 2px;">
-                <b>CURSO: </b>
+                <b id="curso_render" name="curso_render">CURSO: </b>
             </div>
 
             <!--[LINHA 3]-->
             <div class="col s7 m7 l7" style="border: black solid 2px;">
-                <b>DISCIPLINA: </b>
+                <b id="disciplina_render" name="disciplina_render">DISCIPLINA: </b>
             </div>
 
             <div class="col s3 m3 l3" style="border: black solid 2px;">
-                <b>CÓDIGO: </b>
+                <b id="codi_render" name="codi_render">CÓDIGO: </b>
             </div>
 
             <div class="col s2 m2 l2" style="border: black solid 2px;">
-                <b>SIGLA: </b>
+                <b id="sigla_render" name="sigla_render">SIGLA: </b>
             </div>
 
             <!--[LINHA 4]-->
             <div class="col s7 m7 l7" style="border: black solid 2px;">
-                <b>PROFESSOR: </b>
+                <b id="professor_render" name="professor_render">PROFESSOR: </b>
             </div>
 
             <div class="col s5 m5 l5" style="border: black solid 2px;">
-                <b>AVALIAÇÃO OFICIAL: </b>
+                <b id="avaliacao_render" name="avaliacao_render">AVALIAÇÃO OFICIAL: </b>
             </div>
 
             <!--[LINHA 5]-->
             <div class="col s3 m3 l3" style="border: black solid 2px;">
-                <b>RA: </b>
+                <b id="ra_render" name="ra_render">RA: </b>
             </div>
 
             <div class="col s7 m7 l7" style="border: black solid 2px;">
-                <b>NOME: </b>
+                <b id="nome_ra_render" name="nome_ra_render">NOME: </b>
             </div>
 
             <div class="col s2 m2 l2 center" style="border: black solid 2px;">
@@ -221,15 +221,15 @@
 
             <!--[LINHA 6]-->
             <div class="col s3 m3 l3" style="border: black solid 2px;">
-                <p>TURNO: </p>
+                <p id="turno_render" name="turno_render">TURNO: </p>
             </div>
 
             <div class="col s2 m2 l2" style="border: black solid 2px;">
-                <p>CICLO: </p>
+                <p id="ciclo_render" name="ciclo_render">CICLO: </p>
             </div>
 
             <div class="col s2 m2 l2" style="border: black solid 2px;">
-                <p>DATA: </p>
+                <p id="data_render" name="data_render">DATA: </p>
             </div>
 
             <div class="col s3 m3 l3" style="border: black solid 2px;">
@@ -247,6 +247,7 @@
         </div>
     </div>
     <div class="modal-footer">
+        <a class="btn" id="gerar-gabaritos-turma" name="gerar-gabaritos-turma">Gerar Gabaritos</a>
         <a href="#!" class="modal-close btn-flat">cancelar</a>
     </div>
 </div>
