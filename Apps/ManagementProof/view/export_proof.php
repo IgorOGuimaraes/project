@@ -164,3 +164,6 @@ foreach ($proof_info AS $info){
 }
 
 echo $html;
+
+
+echo'<form><input type="button" value="Imprimir" onClick="window.print()"/></form>';
