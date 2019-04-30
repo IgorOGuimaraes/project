@@ -76,7 +76,10 @@
             <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementStudent/home" class="waves-effect waves-teal white-text">Gerenciamento de Aluno<i class="material-icons white-text">people</i></a>
         </li>
         <li class="bold">
-            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementSubject/home" class="waves-effect waves-teal white-text">Gerenciamento de Disciplinas<i class="material-icons white-text">content_paste</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementProof/home" class="waves-effect waves-teal white-text">Gerenciamento de Prova<i class="material-icons white-text">grid_on</i></a>
+        </li>
+        <li class="bold">
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementClass/home" class="waves-effect waves-teal white-text">Gerenciamento de Turma<i class="material-icons white-text">content_paste</i></a>
         </li>
 
         <hr>

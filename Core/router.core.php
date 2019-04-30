@@ -38,5 +38,21 @@
         'Controller' => 'Apps/ManagementSubject/controller/ManagementSubjectController.php',
         'Name' => 'ManagementSubjectController',
         'Public' => false,
+    ),
+    'MANAGEMENTCLASS' =>
+        array (
+        'Model' => 'Apps/ManagementClass/model/ManagementClassModel.php',
+        'View' => 'Apps/ManagementClass/view/',
+        'Controller' => 'Apps/ManagementClass/controller/ManagementClassController.php',
+        'Name' => 'ManagementClassController',
+        'Public' => false,
+    ),
+    'MANAGEMENTPROOF' =>
+        array (
+        'Model' => 'Apps/ManagementProof/model/ManagementProofModel.php',
+        'View' => 'Apps/ManagementProof/view/',
+        'Controller' => 'Apps/ManagementProof/controller/ManagementProofController.php',
+        'Name' => 'ManagementProofController',
+        'Public' => false,
     )
 );
