@@ -27,14 +27,30 @@ class DashboardModel extends Model {
 
     public function getCountCourse($course)
     {
-        return $this->connection->query("SELECT count(NameCourse) AS TCourse FROM tb_app_curso WHERE NameCourse = '$course'")->fetchAll();
+        return $this->connection->query("SELECT count(NomeCurso) AS TCourse FROM tb_app_curso WHERE NomeCurso = '$course'")->fetchAll();
     }
 
     public function setNewCourse($course)
     {
         $this->connection->insert(
             'tb_app_curso',[
-                'NameCourse' => $course
+                'NomeCurso' => $course
+            ]
+        );
+
+        return $this->connection->id();
+    }
+
+    public function getCountDisciplina($disciplina)
+    {
+        return $this->connection->query("SELECT count(NomeDisciplina) AS TDisciplina FROM tb_app_disciplina WHERE NomeDisciplina = '$disciplina'")->fetchAll();
+    }
+
+    public function setNewDisciplina($course)
+    {
+        $this->connection->insert(
+            'tb_app_disciplina',[
+                'NomeDisciplina' => $course
             ]
         );
 

@@ -137,6 +137,33 @@ class DashboardController extends Controller
 
     }
 
+    public function new_disciplina ()
+    {
+
+        $this->contentType('ajax');
+        $model = new DashboardModel();
+
+        $result = $model->getCountDisciplina($_POST['disciplina_name']);
+
+        if($result[0]['TDisciplina'] != 0){
+            echo json_encode(
+                [
+                    'status' => 'invalid',
+                    'message' => 'Disciplina já existe!'
+                ]
+            );
+        } else {
+            $model->setNewDisciplina($_POST['disciplina_name']);
+            echo json_encode(
+                [
+                    'status' => 'success',
+                    'message' => 'Disciplina adicionado com sucesso!'
+                ]
+            );
+        }
+
+    }
+
     public function save_new_professor ()
     {
 

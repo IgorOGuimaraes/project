@@ -1,12 +1,20 @@
-<h4 class="header">Guide</h4>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin porta luctus lacus, non mollis lacus feugiat sed. In eleifend, massa quis elementum consectetur, nunc risus bibendum lacus, lobortis elementum urna dolor consequat elit. Sed mollis nunc suscipit lacus tincidunt rutrum. Fusce leo magna, pretium posuere sapien vitae, tempor convallis turpis. Etiam mattis, dolor eget consectetur facilisis, lacus sem scelerisque nibh, quis imperdiet libero sapien ac mi. Proin vestibulum, elit eget commodo porttitor, libero magna blandit ex, eget porta ipsum metus in mauris. Quisque suscipit rhoncus elit, ut porta orci luctus sed. Vivamus vitae sem a lorem luctus fermentum. Curabitur ac felis neque. Morbi luctus condimentum fringilla. Vivamus sed pulvinar justo, sit amet rhoncus urna. Integer sit amet tristique nisi, eget efficitur dolor. Phasellus pulvinar velit in porta aliquet. Nullam eget sollicitudin neque, et pharetra est.
+<div class="row">
+    <div class="col s12 m12 l12">
 
-    Nunc a ante consequat, sollicitudin velit sed, vulputate libero. Fusce ac mattis libero, sed pretium nunc. Pellentesque urna velit, gravida dictum placerat non, mattis a nisl. Nulla laoreet metus eget odio egestas dictum. Suspendisse ultricies mauris consectetur magna dapibus rhoncus. Nam id ligula posuere, commodo sapien eget, facilisis enim. Nam leo est, sodales nec magna vitae, fringilla consectetur sapien. Curabitur finibus ipsum a dolor malesuada rhoncus. Phasellus euismod nibh nec arcu laoreet rhoncus. Maecenas laoreet felis odio, nec pharetra augue interdum at. Donec ligula risus, interdum vel felis non, iaculis lobortis neque. Aliquam egestas, neque ut fermentum accumsan, felis erat posuere augue, non egestas odio tortor nec lorem. Integer aliquam odio congue sem imperdiet, nec fermentum libero venenatis. Praesent est elit, placerat quis posuere in, gravida id lacus. Quisque eu lorem id elit malesuada pretium eget eu nulla. Cras mi dolor, faucibus vitae dolor eu, efficitur lobortis lacus.
+        <h5 class="header">Manual</h5>
 
-    Aliquam venenatis faucibus nunc et scelerisque. Aliquam dapibus sed massa nec suscipit. In dapibus bibendum lectus aliquet imperdiet. Sed tincidunt laoreet ante, ac dictum eros. Donec hendrerit orci nulla. Nunc justo odio, porttitor et vestibulum sit amet, porttitor et ligula. Sed eu ex quis nunc lacinia faucibus. Quisque a pharetra eros, sed pellentesque enim. In venenatis diam turpis, eget molestie nulla laoreet a. Donec sit amet augue nec diam consectetur semper. Suspendisse mi tellus, efficitur quis mattis nec, tempus vitae metus.
+        <p>A seguir, apresentamos o manual de utilização da plataforma de correções de provas automzatiza (aplicativo mobile e portal) Gabart.io</p>
 
-    Nulla eget sollicitudin diam. Suspendisse mi turpis, egestas et erat sit amet, sollicitudin lobortis libero. Nullam tortor enim, vulputate ac justo ac, efficitur tempor felis. Nunc a quam enim. Duis finibus felis et pulvinar convallis. Proin quis mollis est. Nulla sit amet sem pharetra, euismod orci sed, consequat velit. Fusce vel turpis dolor. Nunc eu egestas enim, sit amet vulputate magna. Sed non imperdiet tortor. Duis mattis dolor nec scelerisque malesuada. Proin quis ex justo.
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">desktop_windows</i>Portal WEB</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">phone_android</i>Aplicativo Android</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
 
-    Nam fringilla enim vel vestibulum imperdiet. Integer sed dignissim tellus. Ut erat massa, cursus non egestas quis, molestie vitae enim. Praesent at tincidunt arcu. Donec sit amet lectus sed elit volutpat posuere et a dolor. Sed ullamcorper auctor volutpat. Nunc tempus a magna in facilisis. Duis vel turpis ante. Aliquam erat volutpat. Donec eget eros eu leo elementum eleifend. In auctor magna ligula.
-</p>
+    </div>
+</div>

@@ -3,6 +3,52 @@
 </script>
 <div class="container">
     <div class="row">
+
+        <!--[Div para adicionar novo curso]-->
+        <div class="col l6 m6 s12 hide admin-div">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    <span class="card-title">Novo Curso</span>
+                    <div class="row">
+                        <form id="new_course_form">
+
+                            <div class="input-field col s12">
+                                <input id="course_name" name="course_name" type="text" class="validate-new-course">
+                                <label for="course_name">Nome Novo Curso</label>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn" id="new_course_button">Adicionar Curso</a>
+                </div>
+            </div>
+        </div>
+
+        <!--[Div para adicionar nova disciplina]-->
+        <div class="col l6 m6 s12 hide admin-div">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    <span class="card-title">Novo Disciplina</span>
+                    <div class="row">
+                        <form id="new_disciplina_form">
+
+                            <div class="input-field col s12">
+                                <input id="disciplina_name" name="disciplina_name" type="text" class="validate-new-disciplina">
+                                <label for="disciplina_name">Nome Nova Disciplina</label>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn" id="new_disciplina_button">Adicionar Disciplina</a>
+                </div>
+            </div>
+        </div>
+
+        <!--[Div para reset de senha]-->
         <div class="col l6 m6 s12">
             <div class="card z-depth-2">
                 <div class="card-content">
@@ -33,27 +79,7 @@
             </div>
         </div>
 
-        <div class="col l6 m6 s12 hide admin-div">
-            <div class="card z-depth-2">
-                <div class="card-content">
-                    <span class="card-title">Novo Curso</span>
-                    <div class="row">
-                        <form id="new_course_form">
-
-                            <div class="input-field col s12">
-                                <input id="course_name" name="course_name" type="text" class="validate-new-course">
-                                <label for="course_name">Nome Novo Curso</label>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-                <div class="card-action">
-                    <a class="waves-effect waves-light btn" id="new_course_button">Adicionar Curso</a>
-                </div>
-            </div>
-        </div>
-
+        <!--[Div para novo usuário]-->
         <div class="col l6 m6 s12 hide admin-div">
             <div class="card z-depth-2">
                 <div class="card-content">

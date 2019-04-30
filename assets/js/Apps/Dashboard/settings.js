@@ -102,6 +102,28 @@ $(document).ready(function () {
        }
     });
 
+    $('#new_disciplina_button').on('click', function () {
+       if(validate('validate-new-disciplina')){
+           $.ajax({
+               type: 'POST',
+               url: APPLICATION_NAME + '/Dashboard/new_disciplina',
+               data: {course_name: $('#disciplina_name').val()},
+               success: function (responseData) {
+                   console.log(responseData['debug']);
+                   M.toast({html: responseData['message'], displayLength: 3000});
+                   if(responseData['status'] == 'success'){
+                       $('#new_disciplina_form').trigger('reset');
+                   }
+               },
+               error: function () {
+                   M.toast({html: 'Opsss, Algo deu errado!',displayLength: 3000});
+               }
+           });
+       } else {
+           M.toast({html: 'Preencha o nome do novo curso!'})
+       }
+    });
+
     $('#teacher_name').on('blur', function () {
        var name = $(this).val();
        var name_sc = especialChar(name);

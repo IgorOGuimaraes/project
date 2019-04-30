@@ -27,13 +27,13 @@
             <a class="brand-logo hide-on-med-and-down"><img src="<?=APPLICATION_NAME?>/assets/img/thumbnail_gabiri.io_logo.png" class="responsive-img" style="height: 35px;"></a>
             <a data-target="slide-out" class="sidenav-trigger tx-grey5"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="<?=APPLICATION_NAME?>/About/home" class="tx-grey5">Guide</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/About/home" class="tx-grey5">Manual</a></li>
                 <li><a href="<?=APPLICATION_NAME?>/Login/home" class="tx-grey5">Login</a></li>
             </ul>
             <ul id="slide-out" class="sidenav">
                 <li><a class="brand-logo"><img src="<?=APPLICATION_NAME?>/assets/img/thumbnail_gabiri.io_logo.png" class="responsive-img"></a></li>
                 <li>\n</li>
-                <li><a href="<?=APPLICATION_NAME?>/About/home" class="tx-grey5">Guide</a></li>
+                <li><a href="<?=APPLICATION_NAME?>/About/home" class="tx-grey5">Manual</a></li>
                 <li><a href="<?=APPLICATION_NAME?>/Login/home" class="tx-grey5">Login</a></li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
-                <h5 class="header">About</h5>
+                <h5 class="header">Sobre</h5>
 
                 <p>A evolução contínua das tecnologias da informação vem promovendo diversas mudanças na sociedade como um todo. Uma das mudanças com maior impacto foi à introdução de dispositivos móveis e computadores com capacidades de processamento maiores e de tamanho excepcionalmente menor a cada geração. Atualmente, esses dispositivos são vistos como empecilhos e muitas vezes atrapalham o desenvolvimento das atividades em classe, porém, se utilizados com propósitos definidos, podem fornecer uma poderosa ferramenta de aprendizado.</p>
                 <p>Buscando intervir na integração do ensino com as novas tecnologias, este projeto visa o desenvolvimento de uma plataforma integrada Web e Mobile que auxilie o docente na correção de provas e no gerenciamento de notas e progresso dos alunos. Com foco nas avaliações objetivas, ou seja, as provas compostas por questões de múltipla escolhe e/ou verdadeiro ou falso, essa ferramenta apoiará o professor na automatização do processo de correção.</p>
