@@ -115,4 +115,10 @@ class ManagementStudentModel extends Model
                 WHERE dc.DisciplinaID = d.DisciplinaID AND dc.CursoID = c.CursoID AND dc.DisciplinaCursoID = tur.DisciplinaCursoID
                 AND tur.TurmaID = alutur.TurmaID AND alutur.AlunoID = " . $id_aluno)->fetchAll();
     }
+
+    public function getNotas($id_aluno)
+    {
+        return $this->connection->query("SELECT * FROM tb_app_respostas AS resp, tb_app_prova AS prov, tb_app_turma AS tur WHERE 
+                resp.ProvaID = prov.ProvaID AND prov.TurmaID = tur.TurmaID AND resp.AlunoID = {$id_aluno}")->fetchAll();
+    }
 }

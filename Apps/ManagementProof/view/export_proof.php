@@ -107,7 +107,7 @@ foreach ($proof_info AS $info){
     $i = 1;
     $j = 0;
 
-    $html .= '<table style="border: black solid 2px; padding: 45px; margin-left: 20%;">';
+    $html .= '<table style="border: black solid 7px; padding: 45px; margin-left: 20%;">';
 
     while ($i <= $questoes->Qtd_questoes) {
         if($questoes->Qtd_questoes <= 10) {

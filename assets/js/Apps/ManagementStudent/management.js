@@ -65,6 +65,7 @@ $(document).ready(function () {
                 {data: "Periodo"},
                 {data: "Ano"},
                 {data: "Semestre"},
+                {data: "Notas"},
                 {data: "Deletar"}
             ],
             dom: 'frtip',
@@ -315,6 +316,9 @@ $(document).ready(function () {
     });
 
 
+    $(document.body).on('click', '.open-notas-turma', function () {
+        $('#modal-nota-disciplina').modal('open');
+    });
 
 
 

@@ -106,6 +106,7 @@
                                         <th>Período</th>
                                         <th>Ano</th>
                                         <th>Semestre</th>
+                                        <th>Notas</th>
                                         <th>Deletar</th>
                                     </tr>
                                     </thead>
@@ -117,6 +118,7 @@
                                         <td>Período</td>
                                         <td>Ano</td>
                                         <td>Semestre</td>
+                                        <th>Notas</th>
                                         <td>Deletar</td>
                                     </tr>
                                     </tfoot>
@@ -170,5 +172,16 @@
     <div class="modal-footer">
         <a class="waves-effect waves-yellow btn" id="new-disciplina-aluno">Adicionar</a>
         <a class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+    </div>
+</div>
+
+
+<div class="modal" id="modal-nota-disciplina">
+    <div class="modal-content">
+        <h4 class="header tx-dark-blue">Notas</h4>
+
+        <p>P1: 10.00</p>
+        <p>P2: 7.00</p>
+        <p>P3: 0.00</p>
     </div>
 </div>

@@ -70,6 +70,9 @@ if (isset($core_routes[$call_c])) {
             die;
         }
 
+        //finish the controller
+//        $controller->__destruct();
+
     } else {
 
         header('Location: ' . APPLICATION_NAME . '/login/not_found');

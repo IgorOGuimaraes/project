@@ -144,14 +144,15 @@ class ManagementStudentController extends Controller
 
         $result = $model->getDisciplinas($_GET['id_aluno']);
 
-        foreach ($result as $r) {
+        foreach ($result as $key => $value) {
             $data [] = [
-                'Curso' => $r['NomeCurso'],
-                'Disciplina' => $r['NomeDisciplina'],
-                'Periodo' => $r['Periodo'],
-                'Ano' => $r['Ano'],
-                'Semestre' => $r['Semestre'],
-                'Deletar' => '<a href="#" class="delete-turma" id="' .$_GET['id_aluno']. '" name="' . $r['TurmaID'] . '"><i class="material-icons red-text">delete</i></a>',
+                'Curso' => $value['NomeCurso'],
+                'Disciplina' => $value['NomeDisciplina'],
+                'Periodo' => $value['Periodo'],
+                'Ano' => $value['Ano'],
+                'Semestre' => $value['Semestre'],
+                'Notas' => '<a href="#" class="open-notas-turma" id="' .$_GET['id_aluno']. '" name="' . $value['TurmaID'] . '"><i class="material-icons">launch</i></a>',
+                'Deletar' => '<a href="#" class="delete-turma" id="' .$_GET['id_aluno']. '" name="' . $value['TurmaID'] . '"><i class="material-icons red-text">delete</i></a>',
             ];
         }
 
