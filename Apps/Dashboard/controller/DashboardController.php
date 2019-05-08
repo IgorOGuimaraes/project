@@ -71,7 +71,9 @@ class DashboardController extends Controller
         //Set content type as html page
         $this->contentType(
             'html',
-            'Guide'
+            'Guide', [
+                $this->_assets_path . 'js/Apps/Dashboard/guide.js',
+            ]
         );
 
         //add dashboard view
