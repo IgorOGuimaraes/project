@@ -33,9 +33,9 @@ class ManagementProofModel extends Model
 
     }
 
-    public function getCountProva($turmaInfo)
+    public function getCountProva($turmaInfo, $officialProof)
     {
-        return $this->connection->query("SELECT count(ProvaID) AS CountProof FROM tb_app_prova WHERE TurmaID = " . $turmaInfo)->fetchAll();
+        return $this->connection->query("SELECT count(ProvaID) AS CountProof FROM tb_app_prova WHERE TurmaID = " . $turmaInfo . " AND ProvaOficial = " . $officialProof)->fetchAll();
     }
 
     public function setNewProof($turmaID, $dataProva, $respostaCorreta, $versaoProva, $officialProof, $formatoGabarito)

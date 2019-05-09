@@ -95,6 +95,7 @@ class ManagementProofController extends Controller
         $semestreProof = $_POST['semestre_proof'];
         $disciplinaProof = $_POST['disciplina_proof'];
         $cursoProof = $_POST['curso_proof'];
+        $officialProof = $_POST['official_proof'];
 
         $turmaInfo = $model->getTurma($periodoProof, $anoProof, $semestreProof, $disciplinaProof, $cursoProof, $_SESSION['ProfessorID']);
 
@@ -105,13 +106,12 @@ class ManagementProofController extends Controller
             ]);
         } else {
 
-            $countProva = $model->getCountProva($turmaInfo[0]['TurmaID']);
+            $countProva = $model->getCountProva($turmaInfo[0]['TurmaID'], $officialProof);
 
             if(!empty($countProva)) {$versaoProva = (int)$countProva[0]['CountProof']+1;}
             else {$versaoProva = 1;}
 
             $dataProva = $_POST['date_proof'];
-            $officialProof = $_POST['official_proof'];
             $questoesProof = $_POST['questoes_proof'];
             $alternativasProof = $_POST['alternativas_proof'];
             $pesoProof = $_POST['peso_proof'];

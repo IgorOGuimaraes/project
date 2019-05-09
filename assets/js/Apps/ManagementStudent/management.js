@@ -107,7 +107,7 @@ $(document).ready(function () {
 
         $(class_name).each(function () {
             if($(this).is('select')){
-                if($(this).val() == '' || $(this).val() == ' '){
+                if($(this).val() == '' || $(this).val() == ' ' || $(this).val() == null){
                     return valid = false;
                 }
             }
@@ -125,11 +125,13 @@ $(document).ready(function () {
             success: function (responseData) {
                 $.each(responseData['data'], function(i, item){
                     $('#disciplina-add').append('<option value="' + item.DisciplinaID + '">' + item.NomeDisciplina + '</option>');
+                    $('#disciplina-export').append('<option value="' + item.DisciplinaID + '">' + item.NomeDisciplina + '</option>');
                     $('select').formSelect();
                 });
 
                 $.each(responseData['data1'], function(i, item){
                     $('#nome_curso').append('<option value="' + item.CursoID + '">' + item.NomeCurso + '</option>');
+                    $('#nome_curso_export').append('<option value="' + item.CursoID + '">' + item.NomeCurso + '</option>');
                     $('select').formSelect();
                 });
             },
@@ -318,8 +320,49 @@ $(document).ready(function () {
 
     $(document.body).on('click', '.open-notas-turma', function () {
         $('#modal-nota-disciplina').modal('open');
+        var turmaID = $(this).attr('name');
+
+        $.ajax({
+            type: 'POST',
+            url: APPLICATION_NAME + '/ManagementStudent/load_notas_alunos',
+            data: {alunoID: id_aluno, turmaID: turmaID},
+            success: function (responseData){
+            },
+            error: function () {
+                M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
+            }
+        });
     });
 
+    $('#export-notas-button').on('click', function(e) {
+
+        if(validateFields('validate-export')){
+            // $.ajax({
+            //     type: 'POST',
+            //     url: APPLICATION_NAME + '/ManagementStudent/export_notas',
+            //     data: $('#form-export-notas').serialize(),
+            //     success: function (responseData){
+            //         console.log(responseData['data']);
+            //     },
+            //     error: function () {
+            //         M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
+            //     }
+            // });
+
+            var disciplina = $("#disciplina-export").val();
+            var curso = $("#nome_curso_export").val();
+            var periodo = $("#periodo-add-export").val();
+            var ano = $("#ano-export").val();
+            var semestre = $("#semestre-export").val();
+
+            e.preventDefault();
+            window.open( APPLICATION_NAME + "/ManagementStudent/export_notas/?disciplina=" + disciplina +
+            '&curso=' + curso + '&periodo=' + periodo + '&ano=' + ano + '&semestre=' + semestre);
+        } else {
+            M.toast({html: 'Preencha todos os campos!', displayLength: 3000});
+        }
+
+    });
 
 
 });

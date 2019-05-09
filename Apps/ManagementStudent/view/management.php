@@ -39,6 +39,7 @@
             </div>
             <div class="card-action">
                 <a class="btn btn-floating btn-large waves-effect waves-light modal-trigger" href="#modal-new-aluno"><i class="material-icons">add</i></a>
+                <a class="btn btn-floating btn-large waves-effect waves-light modal-trigger right" href="#modal-export"><i class="material-icons">file_download</i></a>
             </div>
         </div>
     </div>
@@ -180,8 +181,68 @@
     <div class="modal-content">
         <h4 class="header tx-dark-blue">Notas</h4>
 
-        <p>P1: 10.00</p>
-        <p>P2: 7.00</p>
-        <p>P3: 0.00</p>
+        <p id="nota-p1"></p>
+        <p id="nota-p2"></p>
+        <p id="nota-p3"></p>
+    </div>
+</div>
+
+
+
+<div class="modal modal-fixed-footer" id="modal-export">
+    <div class="modal-content">
+        <h4 class="header tx-dark-blue">Export</h4>
+
+        <form id="form-export-notas">
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <select id="disciplina-export" name="disciplina-export" class="validate-export">
+                        <option value="" disabled selected>Choose your option</option>
+                    </select>
+                    <label>Nome Disciplina</label>
+                </div>
+
+                <div class="input-field col s12 m6 l6">
+                    <select id="nome_curso_export" name="nome_curso_export" class="validate-export">
+                        <option value="" disabled selected>Choose your option</option>
+                    </select>
+                    <label>Nome Curso</label>
+                </div>
+
+                <div class="input-field col s11 m4 l4">
+                    <select id="periodo-add-export" name="periodo-add-export" class="validate-export">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Matutino">Matutino</option>
+                        <option value="Vespertino">Vespertino</option>
+                        <option value="Noturno">Noturno</option>
+                    </select>
+                    <label>Período</label>
+                </div>
+
+                <div class="input-field col s12 m4 l4">
+                    <select id="ano-export" name="ano-export" class="validate-export">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                    </select>
+                    <label>Ano</label>
+                </div>
+
+                <div class="input-field col s12 m4 l4">
+                    <select id="semestre-export" name="semestre-export" class="validate-export">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <label>Semestre</label>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <a class="waves-effect waves-yellow btn" id="export-notas-button">Export</a>
+        <a class="modal-close waves-effect waves-red btn-flat">Cancel</a>
     </div>
 </div>
