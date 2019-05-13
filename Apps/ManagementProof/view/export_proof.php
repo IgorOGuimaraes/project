@@ -46,7 +46,7 @@ foreach ($proof_info AS $info){
 
     $qrCodeName = "qrCodes/".$info['Ano'].' - '.$info['NomeDisciplina'].'_'.$info['NomeAluno'].".png";
     $qr = $info['Ano'].' - '.$info['NomeDisciplina'].'_'.$info['NomeAluno'].".png";
-    $informacoes = '{ProvaID: '.$info['ProvaID'].', TurmaID: '.$info['TurmaID'].', Curso: '.$info['CursoNome'].', CursoID: '.$info['CursoID'].', Disciplina: '.$info['NomeDisciplina'].', DisciplinaID: '.$info['DisciplinaID'].', Nome Aluno: ' .$info['NomeAluno']. ', AlunoID: ' .$info['AlunoID']. ', Data Prova: ' . $info['DataProva'] . ', Descrição: Prova do periodo da ' . $info['Periodo'] . ' do ano de ' . $info['Ano'] . ' no ' . $info['Semestre'] . '° Semestre}';
+    $informacoes = '{ProvaID: '.$info['ProvaID'].', TurmaID: '.$info['TurmaID'].', FormatoGabarito: ' .$info['FormatoGabarito']. ' ,Curso: '.$info['CursoNome'].', CursoID: '.$info['CursoID'].', Disciplina: '.$info['NomeDisciplina'].', DisciplinaID: '.$info['DisciplinaID'].', Nome Aluno: ' .$info['NomeAluno']. ', AlunoID: ' .$info['AlunoID']. ', Data Prova: ' . $info['DataProva'] . ', Descrição: Prova do periodo da ' . $info['Periodo'] . ' do ano de ' . $info['Ano'] . ' no ' . $info['Semestre'] . '° Semestre}';
     QRcode::png($informacoes, $qrCodeName);
 
 //    echo '<img src="'.APPLICATION_NAME.'/qrCodes/'.$qr.'">';
@@ -114,7 +114,7 @@ foreach ($proof_info AS $info){
             $html .= '<tr><td>' .$i. '</td>';
 
             while ($j < $questoes->Qtd_alternativas){
-                $html .= '<td style="padding: 5px;"><p class="alternativas" style="border: black solid 4px; color: black; background-color: white !important;">' .$letter[$j]. '</p></td>';
+                $html .= '<td style="padding: 5px;"><p class="alternativas" style="border: black solid 3px; color: black; background-color: white !important;">' .$letter[$j]. '</p></td>';
                 $j++;
             }
 
