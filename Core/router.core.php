@@ -20,7 +20,7 @@
         'Model' => 'Apps/About/model/AboutModel.php',
         'View' => 'Apps/About/view/',
         'Controller' => 'Apps/About/controller/AboutController.php',
-        'Name' => 'AboutController',
+        'Name' => 'ApiController',
         'Public' => false,
     ),
     'MANAGEMENTSTUDENT' =>
@@ -54,5 +54,13 @@
         'Controller' => 'Apps/ManagementProof/controller/ManagementProofController.php',
         'Name' => 'ManagementProofController',
         'Public' => false,
+    ),
+    'API' =>
+        array (
+        'Model' => 'Apps/API/model/ApiModel.php',
+        'View' => 'Apps/API/view/',
+        'Controller' => 'Apps/API/controller/ApiController.php',
+        'Name' => 'ApiController',
+        'Public' => true,
     )
 );
