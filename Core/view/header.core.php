@@ -70,27 +70,27 @@
         <hr>
 
         <li class="bold">
-            <a target="" href="<?php echo APPLICATION_NAME; ?>/Dashboard/home" class="waves-effect waves-teal white-text">Gráficos<i class="material-icons white-text">dashboard</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/Dashboard/home" class="waves-effect waves-blue white-text">Gráficos<i class="material-icons white-text">dashboard</i></a>
         </li>
         <li class="bold">
-            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementStudent/home" class="waves-effect waves-teal white-text">Gerenciamento de Aluno<i class="material-icons white-text">people</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementStudent/home" class="waves-effect waves-blue white-text">Gerenciamento de Aluno<i class="material-icons white-text">people</i></a>
         </li>
         <li class="bold">
-            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementProof/home" class="waves-effect waves-teal white-text">Gerenciamento de Prova<i class="material-icons white-text">grid_on</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementProof/home" class="waves-effect waves-blue white-text">Gerenciamento de Prova<i class="material-icons white-text">grid_on</i></a>
         </li>
         <li class="bold">
-            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementClass/home" class="waves-effect waves-teal white-text">Gerenciamento de Turma<i class="material-icons white-text">content_paste</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementClass/home" class="waves-effect waves-blue white-text">Gerenciamento de Turma<i class="material-icons white-text">content_paste</i></a>
         </li>
 
         <hr>
         <li class="bold">
-            <a target="" href="<?php echo APPLICATION_NAME; ?>/dashboard/guide" class="waves-effect waves-teal white-text">Manual<i class="material-icons white-text">import_contacts</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/dashboard/guide" class="waves-effect waves-blue white-text">Manual<i class="material-icons white-text">import_contacts</i></a>
         </li>
         <li class="bold">
-            <a target="" href="<?php echo APPLICATION_NAME; ?>/dashboard/settings" class="waves-effect waves-teal white-text">Configuração<i class="material-icons white-text">settings</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/dashboard/settings" class="waves-effect waves-blue white-text">Configuração<i class="material-icons white-text">settings</i></a>
         </li>
         <li class="bold">
-            <a target="" href="<?php echo APPLICATION_NAME; ?>/login/logout/" class="waves-effect waves-teal white-text">Logout<i class="material-icons white-text">exit_to_app</i></a>
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/login/logout/" class="waves-effect waves-blue white-text">Logout<i class="material-icons white-text">exit_to_app</i></a>
         </li>
     </ul>
     <div class="patreon-ad t-grey5"><a href="http://fatecsbc.edu.br/" target="_blank" class="waves-effect tx-white">Copyright © <?php echo date('Y'); ?> Gabarit.IO</a></div>

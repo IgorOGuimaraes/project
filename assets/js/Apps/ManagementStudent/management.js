@@ -206,8 +206,6 @@ $(document).ready(function () {
                 $('#nome_aluno_view').val(responseData['data'][0]['NomePessoa']);
                 $('#ra_aluno_view').val(responseData['data'][0]['RA']);
 
-                loadDatatableDisciplinas(id_aluno);
-
                 M.updateTextFields();
             },
             error: function (){
@@ -296,10 +294,11 @@ $(document).ready(function () {
                 data: {idAluno: id_aluno, idTurma: id_turma},
                 success: function (responseData){
                     M.toast({html: responseData['message'], displayLength: 3000});
-                    loadDatatableDisciplinas();
 
                     var colls = document.querySelectorAll('.collapsible');
                     M.Collapsible.init(colls);
+
+                    loadDatatableDisciplinas(id_aluno);
                 },
                 error: function () {
                     M.toast({html: 'Opsss, Algo deu errado!', displayLength: 3000});
@@ -315,6 +314,8 @@ $(document).ready(function () {
         $('#header-aluno-disciplina').html($(this).attr('id'));
 
         id_aluno = $(this).attr('name');
+
+        loadDatatableDisciplinas(id_aluno);
     });
 
 

@@ -18,8 +18,8 @@
                                 <th>RA Aluno</th>
                                 <th>Nome Aluno</th>
                                 <th>Deletar</th>
-                                <th>Disciplinas</th>
-                                <th>Editar</th>
+                                <th>Adicionar Disciplinas</th>
+                                <th>Visualizar</th>
                             </tr>
                             </thead>
                             <tbody id="aluno_result"></tbody>
@@ -28,8 +28,8 @@
                                 <td>RA Aluno</td>
                                 <td>Nome Aluno</td>
                                 <td>Deletar</td>
-                                <td>Disciplinas</td>
-                                <td>Editar</td>
+                                <td>Adicionar Disciplinas</td>
+                                <td>Visualizar</td>
                             </tr>
                             </tfoot>
                         </table>
@@ -93,41 +93,6 @@
                     <label for="ra_aluno_view">RA Aluno</label>
                 </div>
             </form>
-
-            <div class="col s12 m12 l12">
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">book</i>Disciplinas</div>
-                        <div class="collapsible-body"><span>
-                                <table class="datatable highlight display centered" id="table_disciplina" name="table_disciplina">
-                                    <thead>
-                                    <tr>
-                                        <th>Curso</th>
-                                        <th>Disciplina</th>
-                                        <th>Período</th>
-                                        <th>Ano</th>
-                                        <th>Semestre</th>
-                                        <th>Notas</th>
-                                        <th>Deletar</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="disciplina_result"></tbody>
-                                    <tfoot>
-                                    <tr>
-                                        <td>Curso</td>
-                                        <td>Disciplina</td>
-                                        <td>Período</td>
-                                        <td>Ano</td>
-                                        <td>Semestre</td>
-                                        <th>Notas</th>
-                                        <td>Deletar</td>
-                                    </tr>
-                                    </tfoot>
-                                </table>
-                            </span></div>
-                    </li>
-                </ul>
-            </div>
         </div>
 
     </div>
@@ -167,6 +132,41 @@
                     <label>Período</label>
                 </div>
             </form>
+
+            <div class="col s12 m12 l12">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">book</i>Disciplinas</div>
+                        <div class="collapsible-body"><span>
+                                <table class="datatable highlight display centered" id="table_disciplina" name="table_disciplina">
+                                    <thead>
+                                    <tr>
+                                        <th>Curso</th>
+                                        <th>Disciplina</th>
+                                        <th>Período</th>
+                                        <th>Ano</th>
+                                        <th>Semestre</th>
+                                        <th>Notas</th>
+                                        <th>Deletar</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="disciplina_result"></tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td>Curso</td>
+                                        <td>Disciplina</td>
+                                        <td>Período</td>
+                                        <td>Ano</td>
+                                        <td>Semestre</td>
+                                        <th>Notas</th>
+                                        <td>Deletar</td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </span></div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </div>

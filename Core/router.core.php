@@ -20,8 +20,8 @@
         'Model' => 'Apps/About/model/AboutModel.php',
         'View' => 'Apps/About/view/',
         'Controller' => 'Apps/About/controller/AboutController.php',
-        'Name' => 'ApiController',
-        'Public' => false,
+        'Name' => 'AboutController',
+        'Public' => True,
     ),
     'MANAGEMENTSTUDENT' =>
         array (
