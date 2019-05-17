@@ -104,5 +104,19 @@ class DashboardModel extends Model {
     }
 
 
+    public function getProfessores()
+    {
+
+        return $this->connection->query("SELECT 
+                pessoa.NomePessoa AS 'Nome',
+                professor.ProfessorID AS 'ProfessorID',
+                professor.UserName AS 'Login',
+                professor.Email AS 'Mail'
+                FROM tb_core_pessoa AS pessoa, tb_core_professor AS professor 
+                WHERE pessoa.PessoaID = professor.PessoaID")->fetchAll();
+
+    }
+
+
 
 }

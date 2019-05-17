@@ -27,7 +27,7 @@ class DashboardController extends Controller
                 $this->_assets_path . 'js/Core/highcharts.js',
                 $this->_assets_path . 'js/Core/highcharts-more.js',
                 $this->_assets_path . 'js/Core/solid-gauge.js',
-                $this->_assets_path . 'js/Apps/Dashboard/home.js',
+                $this->_assets_path . 'js/Apps/Dashboard/home.js?v=' . date('YmdHis'),
             ], [
                 $this->_assets_path . 'css/Apps/Dashboard/dashboard.css',
             ]);
@@ -52,10 +52,12 @@ class DashboardController extends Controller
             'html',
             'My Settings',
             [
-                $this->_assets_path . 'js/Apps/Dashboard/settings.js',
+                $this->_assets_path . 'js/Core/datatables.min.js',
+                $this->_assets_path . 'js/Apps/Dashboard/settings.js?v=' . date('YmdHis'),
                 $this->_assets_path . 'js/Core/sweetalert2.all.min.js',
             ],
             [
+                $this->_assets_path . 'css/Core/datatables.min.css',
                 $this->_assets_path . 'css/Core/sweetalert2.min.css'
             ]
         );
@@ -72,7 +74,7 @@ class DashboardController extends Controller
         $this->contentType(
             'html',
             'Guide', [
-                $this->_assets_path . 'js/Apps/Dashboard/guide.js',
+                $this->_assets_path . 'js/Apps/Dashboard/guide.js?v=' . date('YmdHis'),
             ]
         );
 
@@ -227,6 +229,29 @@ class DashboardController extends Controller
                 'message' => $message
             ]
         );
+
+    }
+
+    public function load_professores()
+    {
+
+        $this->contentType('ajax');
+        $model = new DashboardModel();
+
+        $result = $model->getProfessores();
+
+        $data = [];
+
+        foreach($result as $r){
+            $data[] = [
+                "Professor ID" => $r['ProfessorID'],
+                "Nome" => $r['Nome'],
+                "Usuário" => $r['Login'],
+                "E-mail" => $r['Mail']
+            ];
+        }
+
+        echo json_encode(['data' => $data]);
 
     }
 

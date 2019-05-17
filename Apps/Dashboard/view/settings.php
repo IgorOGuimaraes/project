@@ -110,5 +110,40 @@
                 </div>
             </div>
         </div>
+
+
+        <!--[Div com a lista de professores cadastrados]-->
+        <div class="col s12 m12 l12 hide admin-div">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Professores Cadastrados</span>
+
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <table class="datatable highlight display centered" id="table_professores" name="table_professores">
+                                <thead>
+                                <tr>
+                                    <th>Professor ID</th>
+                                    <th>Nome</th>
+                                    <th>Usuário</th>
+                                    <th>E-mail</th>
+                                </tr>
+                                </thead>
+                                <tbody id="professores_result"></tbody>
+                                <tfoot>
+                                <tr>
+                                    <td>Professor ID</td>
+                                    <td>Nome</td>
+                                    <td>Usuário</td>
+                                    <td>E-mail</td
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

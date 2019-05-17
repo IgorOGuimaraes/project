@@ -1,8 +1,50 @@
 $(document).ready(function () {
 
     /*
+    * Initialization
+    */
+    var datatable_professor = $('#table_professores');
+
+    /*
     Function
     */
+
+    function loadDatatableProfessores()
+    {
+
+        datatable_professor.dataTable().fnDestroy();
+        datatable_professor.dataTable({
+            "ajax": APPLICATION_NAME + "/Dashboard/load_professores/",
+            responsive: false,
+            columns: [
+                {data: "Professor ID"},
+                {data: "Nome"},
+                {data: "Usuário"},
+                {data: "E-mail"}
+            ],
+            dom: 'frtip',
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "language": {
+                'lengthMenu': "_MENU_"
+            },
+            initComplete: function () {
+                this.api().columns().every(function () {
+                    var column = this;
+                    var input = document.createElement("input");
+                    input.setAttribute("Placeholder","Filter");
+                    $(input).appendTo($(column.footer()).empty())
+                        .on('keyup change', function () {
+                            column.search($(this).val(), false, false, true).draw();
+                        });
+                });
+            }
+        });
+
+        $('#table_professores_wrapper').css('width', '100%', 'important');
+        $('#table_professores_filter').css('width', '100%', 'important');
+        $('#table_professores_filter').css('text-align', 'left');
+
+    }
 
     function validate (classValidate)
     {
@@ -44,6 +86,7 @@ $(document).ready(function () {
         $('.admin-div').remove();
     } else {
         $('.admin-div').removeClass('hide');
+        loadDatatableProfessores()
     }
 
     $('#reset_pass').on('click', function () {
