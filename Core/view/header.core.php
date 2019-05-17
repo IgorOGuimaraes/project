@@ -81,6 +81,9 @@
         <li class="bold">
             <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementClass/home" class="waves-effect waves-blue white-text">Gerenciamento de Turma<i class="material-icons white-text">content_paste</i></a>
         </li>
+        <li class="bold">
+            <a target="" href="<?php echo APPLICATION_NAME; ?>/ManagementResults/home" class="waves-effect waves-blue white-text">Notas da Turma<i class="material-icons white-text">edit</i></a>
+        </li>
 
         <hr>
         <li class="bold">

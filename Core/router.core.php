@@ -62,5 +62,13 @@
         'Controller' => 'Apps/API/controller/ApiController.php',
         'Name' => 'ApiController',
         'Public' => true,
+    ),
+    'MANAGEMENTRESULTS' =>
+        array (
+        'Model' => 'Apps/ManagementResults/model/ManagementResultsModel.php',
+        'View' => 'Apps/ManagementResults/view/',
+        'Controller' => 'Apps/ManagementResults/controller/ManagementResultsController.php',
+        'Name' => 'ManagementResultsController',
+        'Public' => true,
     )
 );
