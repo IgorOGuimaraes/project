@@ -281,7 +281,105 @@
             </li>
             <li>
                 <div class="collapsible-header"><i class="material-icons">phone_android</i>Aplicativo Android</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="collapsible-body">
+                    <span>
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header">Donwload e instalação do aplicativo</div>
+                                <div class="collapsible-body">
+                                    <p>
+                                        <ul>
+                                            <li>1. Acesse o portal através do dispositivo móvel</li>
+                                            <li>2. No menu lateral clique em Donwloads</li>
+                                            <li>3. Baixe o APK</li>
+                                            <li>4. Toque no arquivo para instalar</li>
+                                        </ul>
+                                    </p>
+                                    <p>
+                                        <b class="tx-red">Observação:</b> Pode ser necessário habilitar “aplicações de terceiros” nas configurações do aparelho.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="collapsible-header">Login</div>
+                                <div class="collapsible-body">
+                                    <p>
+                                        <ul>
+                                            <li>1. Acesse o Aplicativo através de um dispositivo móvel</li>
+                                            <li>2. Informe seu usuário ou e-mail cadastrado</li>
+                                            <li>3. Informe a senha</li>
+                                        </ul>
+                                    </p>
+
+                                    <img class="materialboxed" width="500" src="<?=APPLICATION_NAME?>/assets/img/Guide/app_img_31.png">
+
+                                    <p>
+                                        <b class="tx-red">Observação:</b> Caso a senha esteja incorreta, acesse o portal Web para recuperação de senha.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="collapsible-header">Corrigir Prova</div>
+                                <div class="collapsible-body">
+                                    <p>
+                                        <ul>
+                                            <li>•	Selecione a opção “Corrigir Prova” no menu principal</li>
+                                        </ul>
+                                    </p>
+
+                                    <img class="materialboxed" width="500" src="<?=APPLICATION_NAME?>/assets/img/Guide/app_img_32.png">
+
+                                    <p>
+                                        <ul>
+                                            <li>•	Faça a leitura do QR Code presente no topo da folha de rosto da prova do aluno. A aplicação irá abrir a câmera do dispositivo nessa etapa</li>
+                                            <li>•	Confirme as informações</li>
+                                        </ul>
+                                    </p>
+
+                                    <img class="materialboxed" width="500" src="<?=APPLICATION_NAME?>/assets/img/Guide/app_img_33.png">
+
+                                    <p>
+                                        <ul>
+                                            <li>•	Faça a leitura do gabarito do aluno, tirando uma foto da área de respostas. A borda preta ao redor do gabarito deve estar presente na imagem</li>
+                                            <li>•	Clique em “Analisar”</li>
+                                        </ul>
+                                    </p>
+
+                                    <img class="materialboxed" width="500" src="<?=APPLICATION_NAME?>/assets/img/Guide/app_img_34.png">
+
+                                    <p>
+                                        <ul>
+                                            <li>•	Confirme se todas as alternativas aparecem realçadas na imagem. Caso alguma alternativa esteja faltando, clique na opção “Voltar”. Se tudo estiver certo, clique em “Confirmar”</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="collapsible-header">Enviar Respostas</div>
+                                <div class="collapsible-body">
+                                    <p>
+                                        O sistema irá apresentar os dados lidos pelo QR Code, as alternativas detectadas e a nota calculada.
+                                    </p>
+
+                                    <img class="materialboxed" width="500" src="<?=APPLICATION_NAME?>/assets/img/Guide/app_img_35.png">
+
+                                    <p>
+                                        Clique em “Enviar” para salvar as informações no portal. Um pop-up irá aparecer para informar se o envio foi realizado com sucesso.
+                                    </p>
+
+                                    <img class="materialboxed" width="500" src="<?=APPLICATION_NAME?>/assets/img/Guide/app_img_36.png">
+
+                                    <p>
+                                        Após essa tela, o usuário deverá voltar para o Menu, e poderá repetir o procedimento quantas vezes for necessário.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </span>
+                </div>
             </li>
         </ul>
 
