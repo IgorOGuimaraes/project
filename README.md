@@ -7,8 +7,12 @@ Igor de Oliveira Guimarães
 
 Matheus Martins Bueno
 
-
 **Orientadora:** Jediane Teixeira de Sousa 
+
+
+#### <a href="https://gabaritio.com.br/About/home">MANUAL</a>
+#### <a href="https://gabaritio.com.br/Login/home">LOGIN</a>
+
 
 ## RESUMO
 Este trabalho propõe o desenvolvimento de uma plataforma Web para gerenciamento de notas de
