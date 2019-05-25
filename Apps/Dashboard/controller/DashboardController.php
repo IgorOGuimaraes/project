@@ -27,10 +27,14 @@ class DashboardController extends Controller
                 $this->_assets_path . 'js/Core/highcharts.js',
                 $this->_assets_path . 'js/Core/highcharts-more.js',
                 $this->_assets_path . 'js/Core/solid-gauge.js',
+                $this->_assets_path . 'js/Core/select2.js',
                 $this->_assets_path . 'js/Apps/Dashboard/home.js?v=' . date('YmdHis'),
             ], [
-                $this->_assets_path . 'css/Apps/Dashboard/dashboard.css',
+                $this->_assets_path . 'css/Core/select2.css',
+                $this->_assets_path . 'css/Apps/Dashboard/dashboard.css'
             ]);
+
+        $alunos = $model->getNomeAlunos();
 
         //add dashboard view
         include 'Apps/Dashboard/view/dashboard.php';
@@ -252,6 +256,162 @@ class DashboardController extends Controller
         }
 
         echo json_encode(['data' => $data]);
+
+    }
+
+    public function notas_aluno_provas()
+    {
+
+        $this->contentType('ajax');
+        $model = new DashboardModel();
+
+        $aluno_id = $_POST['idAluno'];
+        $disciplina_id = $_POST['idDisciplina'];
+
+        $data = $model->getNotasAluno($aluno_id, $disciplina_id);
+
+        if(!empty($data)){
+            $nome = $data[0]['Nome'];
+            $nota1 = (float)$data[0]['Nota'];
+            $nota2 = (float)$data[1]['Nota'];
+        } else {
+            $nome = '';
+            $nota1 = 0.00;
+            $nota2 = 0.00;
+        }
+
+        echo json_encode(
+            [
+                'nomeAluno' => $nome,
+                'prova1' => $nota1,
+                'prova2' => $nota2,
+            ]
+        );
+
+    }
+
+    public function notas_comparativo_turmas()
+    {
+
+        $this->contentType('ajax');
+        $model = new DashboardModel();
+
+        $disciplina_id = $_POST['idDisciplina'];
+        $curso_id = $_POST['idCurso'];
+
+        $turma1 = 0.00;
+        $turma2 = 0.00;
+
+        if($_POST['type'] == 'Comp') {
+            $peridoA = $_POST['periodoA'];
+            $oficialA = $_POST['oficialA'];
+            $anoA = $_POST['anoA'];
+            $semestreA = $_POST['semestreA'];
+
+            $turma1 = $model->mediaNotasTurma($disciplina_id, $curso_id, $peridoA, $oficialA, $anoA, $semestreA);
+
+            $peridoB = $_POST['periodoB'];
+            $oficialB = $_POST['oficialB'];
+            $anoB = $_POST['anoB'];
+            $semestreB = $_POST['semestreB'];
+
+            $turma2 = $model->mediaNotasTurma($disciplina_id, $curso_id, $peridoB, $oficialB, $anoB, $semestreB);
+        } else {
+            $periodo = $_POST['periodo'];
+            $oficial = $_POST['oficial'];
+            $ano = $_POST['ano'];
+            $semestre = $_POST['semestre'];
+
+            $turma1 = $model->mediaNotasTurma($disciplina_id, $curso_id, $periodo, $oficial, $ano, $semestre);
+        }
+
+        echo json_encode(
+            [
+                'turma1' => $turma1[0]['MediaNota'],
+                'turma2' => $turma2[0]['MediaNota']
+            ]
+        );
+    }
+
+    public function respostas_certas_erradas()
+    {
+
+        $this->contentType('ajax');
+        $model = new DashboardModel();
+
+        $disciplina_id = $_POST['idDisciplina'];
+        $curso_id = $_POST['idCurso'];
+
+        $periodo = $_POST['periodo'];
+        $oficial = $_POST['oficial'];
+        $ano = $_POST['ano'];
+        $semestre = $_POST['semestre'];
+
+        $respostas = $model->getRespostas($disciplina_id, $curso_id, $periodo, $oficial, $ano, $semestre);
+
+        $i = 0;
+
+        $data = [];
+        $count = 0;
+
+        foreach ($respostas as $r) {
+            $replace = str_replace('"','', $r['Respostas']);
+            $array_qts = explode(',', $replace);
+
+            if($data == []){
+                foreach ($array_qts as $aq){
+                    $data['Certo'][$i] = 0;
+                    $data['Errado'][$i] = 0;
+                    $i++;
+                }
+                $i = 0;
+                $count = count($array_qts);
+            }
+
+            foreach($array_qts as $aq){
+                if($i < $count){
+
+                    if($aq == 'c'){
+                        $data['Certo'][$i] += 1;
+                    }
+                    else if($aq == 'e'){
+                        $data['Errado'][$i] += 1;
+                    }
+
+                }
+                $i++;
+            }
+
+            $i = 0;
+        }
+
+        echo json_encode(
+            [
+                'certas' => $data['Certo'],
+                'erradas' => $data['Errado'],
+                'count' => $count
+            ]
+        );
+
+    }
+
+
+
+    public function load_filters()
+    {
+
+        $this->contentType('ajax');
+        $model = new DashboardModel();
+
+        $disciplinas = $model->getDisciplinas();
+        $cursos = $model->getCursos();
+
+        echo json_encode(
+            [
+                'disciplinas' => $disciplinas,
+                'cursos' => $cursos,
+            ]
+        );
 
     }
 

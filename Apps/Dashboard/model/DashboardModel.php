@@ -117,6 +117,64 @@ class DashboardModel extends Model {
 
     }
 
+    public function getNomeAlunos()
+    {
 
+        return $this->connection->query("SELECT * FROM tb_core_pessoa AS pessoa, tb_app_aluno AS aluno 
+                WHERE pessoa.PessoaID = aluno.PessoaID AND aluno.ProfessorID = {$_SESSION['ProfessorID']}")->fetchAll();
+
+    }
+
+    public function getDisciplinas()
+    {
+        return $this->connection->select('tb_app_disciplina', '*');
+    }
+
+    public function getCursos()
+    {
+        return $this->connection->select('tb_app_curso', '*');
+    }
+
+    public function getNotasAluno($aluno_id, $disciplina_id)
+    {
+        return $this->connection->query("SELECT
+                pessoa.NomePessoa AS Nome,
+                prova.ProvaOficial AS Prova,
+                respostas.NotaAluno AS Nota
+                
+                FROM tb_core_pessoa AS pessoa, tb_app_aluno AS aluno, tb_app_respostas AS respostas, 
+                tb_app_prova AS prova, tb_app_turma AS turma, tb_app_disciplina_curso AS disciplinaCurso
+                
+                WHERE pessoa.PessoaID = aluno.PessoaID AND aluno.AlunoID = $aluno_id AND aluno.AlunoID = respostas.AlunoID
+                AND respostas.ProvaID = prova.ProvaID AND prova.TurmaID = turma.TurmaID
+                AND turma.DisciplinaCursoID = disciplinaCurso.DisciplinaCursoID AND disciplinaCurso.DisciplinaID = $disciplina_id ORDER BY prova.ProvaOficial ASC")->fetchAll();
+    }
+
+    public function mediaNotasTurma($disciplina_id, $curso_id, $perido, $oficial, $ano, $semestre)
+    {
+
+        return $this->connection->query("SELECT
+                AVG(respostas.NotaAluno) AS MediaNota
+                FROM tb_app_disciplina_curso AS disciplinaCurso, tb_app_turma AS turma, tb_app_prova AS prova, tb_app_respostas AS respostas
+                WHERE disciplinaCurso.CursoID = $curso_id AND disciplinaCurso.DisciplinaID = $disciplina_id
+                AND disciplinaCurso.DisciplinaCursoID = turma.DisciplinaCursoID
+                AND turma.Periodo = '$perido' AND turma.Ano = $ano AND turma.Semestre = $semestre
+                AND turma.TurmaID = prova.TurmaID AND prova.ProvaOficial = '$oficial'
+                AND prova.ProvaID = respostas.ProvaID")->fetchAll();
+
+    }
+
+    public function getRespostas($disciplina_id, $curso_id, $periodo, $oficial, $ano, $semestre)
+    {
+
+        return $this->connection->query("SELECT
+                respostas.RespostaAluno AS Respostas
+                FROM tb_app_turma AS turma, tb_app_disciplina_curso AS disciplinaCurso, tb_app_prova AS prova, tb_app_respostas AS respostas
+                WHERE turma.Periodo = '$periodo' AND turma.Ano = $ano AND turma.Semestre = $semestre
+                AND turma.DisciplinaCursoID = disciplinaCurso.DisciplinaCursoID
+                AND disciplinaCurso.CursoID = $curso_id AND disciplinaCurso.DisciplinaID = $disciplina_id AND disciplinaCurso.ProfessorID = {$_SESSION['ProfessorID']}
+                AND turma.TurmaID = prova.TurmaID AND prova.ProvaID = respostas.ProvaID AND prova.ProvaOficial = '$oficial'")->fetchAll();
+
+    }
 
 }
